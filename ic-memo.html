@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Towing Services — IC Theme Memo — Wildcat Capital Management</title>
+<style>
+  @page {
+    margin: 1in;
+    size: letter;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Calibri, 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.15;
+    color: #1a1a1a;
+    background: #ffffff;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 1in;
+  }
+  /* Header */
+  .doc-header {
+    text-align: center;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .firm-name {
+    font-size: 13pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+  }
+  .doc-type {
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-top: 3px;
+  }
+  .confidential {
+    font-size: 9pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 3px;
+  }
+  /* Metadata table */
+  .meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 10.5pt;
+  }
+  .meta-table td {
+    padding: 3px 8px 3px 0;
+    vertical-align: top;
+  }
+  .meta-table td:first-child {
+    font-weight: 700;
+    width: 130px;
+    color: #1a1a1a;
+  }
+  .meta-table td:last-child {
+    color: #1a1a1a;
+  }
+  hr.meta-sep {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 4px 0 16px 0;
+  }
+  /* Section headers */
+  h1.section-title {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 4px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    page-break-after: avoid;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  h2.subsection {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+  h3.subsubsection {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #333;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  /* Body text */
+  p {
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  /* Recommendation box */
+  .rec-box {
+    border: 2px solid #1a1a1a;
+    padding: 14px 18px;
+    margin: 16px 0;
+    background: #f8f8f8;
+    page-break-inside: avoid;
+  }
+  .rec-box-header {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+  .rec-verdict {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .rec-body {
+    font-size: 10.5pt;
+    line-height: 1.25;
+    color: #1a1a1a;
+  }
+  /* KPI / Key metrics table */
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 10pt;
+    font-variant-numeric: tabular-nums;
+    page-break-inside: avoid;
+  }
+  .kpi-table thead tr {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+  .kpi-table thead th {
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 9.5pt;
+    letter-spacing: 0.03em;
+  }
+  .kpi-table thead th.num {
+    text-align: right;
+  }
+  .kpi-table tbody tr:nth-child(even) {
+    background: #f5f5f5;
+  }
+  .kpi-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+  .kpi-table tbody td {
+    padding: 5px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+  }
+  .kpi-table tbody td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .kpi-table tbody td.label {
+    font-weight: 600;
+  }
+  /* Financial tables — PE convention */
+  .fin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 10pt;
+    font-variant-numeric: tabular-nums;
+    page-break-inside: avoid;
+  }
+  .fin-table thead tr {
+    border-bottom: 2px solid #1a1a1a;
+  }
+  .fin-table thead th {
+    padding: 5px 8px;
+    text-align: right;
+    font-weight: 700;
+    font-size: 9.5pt;
+  }
+  .fin-table thead th.left {
+    text-align: left;
+  }
+  .fin-table tbody tr:nth-child(even) {
+    background: #f8f8f8;
+  }
+  .fin-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+  .fin-table tbody td {
+    padding: 4px 8px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .fin-table tbody td.left {
+    text-align: left;
+  }
+  .fin-table tbody td.indent {
+    text-align: left;
+    padding-left: 24px;
+  }
+  .fin-table tfoot tr.total td {
+    border-top: 3px double #1a1a1a;
+    font-weight: 700;
+    background: #f0f0f0;
+  }
+  .fin-table tfoot tr.total td.left {
+    text-align: left;
+  }
+  /* Risk matrix */
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  .risk-table thead tr {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+  .risk-table thead th {
+    padding: 6px 8px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 9pt;
+  }
+  .risk-table tbody tr:nth-child(even) {
+    background: #f5f5f5;
+  }
+  .risk-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+  .risk-table tbody td {
+    padding: 5px 8px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    font-size: 9.5pt;
+    line-height: 1.2;
+  }
+  .badge {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 2px;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .badge-h { background: #ffe0e0; color: #8b0000; }
+  .badge-m { background: #fff3cd; color: #7d5a00; }
+  .badge-l { background: #e0f0e0; color: #1a5a1a; }
+  /* Score distribution table */
+  .score-table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 10pt;
+    font-variant-numeric: tabular-nums;
+    page-break-inside: avoid;
+  }
+  .score-table thead tr {
+    background: #1a1a1a;
+    color: #fff;
+  }
+  .score-table thead th {
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+  .score-table tbody td {
+    padding: 4px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  .score-table tbody tr:nth-child(even) { background: #f5f5f5; }
+  .score-table tbody tr:nth-child(odd) { background: #fff; }
+  /* Thesis points */
+  .thesis-block {
+    margin: 14px 0;
+    padding: 12px 14px;
+    border-left: 3px solid #1a1a1a;
+    background: #f9f9f9;
+    page-break-inside: avoid;
+  }
+  .thesis-number {
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #666;
+    margin-bottom: 3px;
+  }
+  .thesis-statement {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .thesis-evidence {
+    font-size: 10pt;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+  .thesis-implication {
+    font-size: 10pt;
+    color: #333;
+    font-style: italic;
+    line-height: 1.2;
+  }
+  .implication-label {
+    font-style: normal;
+    font-weight: 700;
+  }
+  /* Workplan table */
+  .workplan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+  .workplan-table thead tr {
+    background: #1a1a1a;
+    color: #fff;
+  }
+  .workplan-table thead th {
+    padding: 6px 10px;
+    text-align: left;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+  .workplan-table tbody tr:nth-child(even) { background: #f5f5f5; }
+  .workplan-table tbody tr:nth-child(odd) { background: #fff; }
+  .workplan-table tbody td {
+    padding: 5px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.2;
+  }
+  /* Entry path boxes */
+  .path-box {
+    border: 1px solid #bbb;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+  .path-header {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 8px 14px;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .path-body {
+    padding: 12px 14px;
+  }
+  /* Footnote style */
+  .footnote {
+    font-size: 8.5pt;
+    color: #666;
+    font-style: italic;
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+  /* Horizontal rule */
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 18px 0;
+  }
+  /* Inline bold */
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  /* Utility */
+  .right { text-align: right; }
+  .center { text-align: center; }
+  .color-note { color: #555; font-size: 9.5pt; }
+  /* Lists */
+  ul.body-list {
+    margin: 6px 0 8px 20px;
+    padding: 0;
+  }
+  ul.body-list li {
+    margin-bottom: 3px;
+    line-height: 1.2;
+    font-size: 10.5pt;
+  }
+  ol.body-list {
+    margin: 6px 0 8px 22px;
+    padding: 0;
+  }
+  ol.body-list li {
+    margin-bottom: 3px;
+    line-height: 1.2;
+    font-size: 10.5pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- HEADER                                                   -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="doc-header">
+  <div class="firm-name">Wildcat Capital Management</div>
+  <div class="doc-type">Investment Committee Memorandum</div>
+  <div class="confidential">Confidential</div>
+</div>
+
+<table class="meta-table">
+  <tr><td>Subject:</td><td>Towing Services — Theme Assessment &amp; Platform Development Authorization</td></tr>
+  <tr><td>Date:</td><td>March 18, 2026</td></tr>
+  <tr><td>Prepared by:</td><td>Research Team</td></tr>
+  <tr><td>Recommendation:</td><td><strong>PROCEED</strong> — Authorize outreach to EP-01 (Midwest — Trantina) and EP-02 (Northeast — Rob's Automotive)</td></tr>
+</table>
+<hr class="meta-sep">
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- I. EXECUTIVE SUMMARY                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">I. Executive Summary</h1>
+
+<p>Towing services is a $12 billion US industry defined by extreme fragmentation — 40,000+ operators, a top-10 combined market share of 3%, and the vast majority of businesses owner-operated with under $1mm in revenue. The fundamental economics are sound: demand is non-discretionary (vehicles break down regardless of economic conditions), the aging vehicle fleet (average age 12.8 years in 2025, a record) drives rising call volumes, and well-run diversified operators achieve 15–25% EBITDA margins. The industry is structurally analogous to express car wash, pest control, and HVAC — all of which are now deep into their consolidation cycles. Towing has not yet begun that cycle in most of the country, and that is the opportunity.</p>
+
+<p>Research conducted in March 2026 across twelve data files — covering market structure, segmentation, unit economics, competitive landscape, transaction history, sponsor intelligence, and actionable target identification — yields a clear conclusion: the Midwest and Northeast are genuine PE white space. The two active institutional platforms (FirstLine/Seaside in the West, Guardian/CHIEF in the Southeast) have left the highest-population-density US markets completely uncontested. Entry multiples of 3–5x EBITDA are 40–60% below analogous services industries, a structural discount driven by three high-profile consolidation failures in the 1997–2017 era — failures that are distinguishable from Wildcat's proposed approach in every meaningful dimension.</p>
+
+<p>I have identified 46 active targets, 9 ranked score-5. Two stand out as platform anchors. In the Midwest, the Trantina Network (James Trantina III, ~$31mm revenue, 30+ locations, 450 trucks, 18 companies in MN/WI) represents a rare case where the management solution and the platform acquisition are the same person: Trantina has already built organically what Wildcat would pay to create, and at 38 he has both the credibility and the horizon to grow it further. In the Northeast, Rob's Automotive (~$36.5mm, 9 locations, PA Turnpike contracts covering 45 miles of highway) offers an irreplaceable contract moat that no competitor can replicate without winning a formal public bid. Both are founder-owned, uncontested by PE, and within Wildcat's equity check range.</p>
+
+<p>I recommend authorizing outreach to both targets. This is not a deal approval — it is authorization to begin conversations with the specific individuals who represent the thesis, before competing sponsors recognize the same opportunity. The Valor/Tailwind Mid-Atlantic entry in January 2026 is the clearest signal that the window is opening. The car wash playbook — patient capital, founder partnership, regional density before national scale — is directly applicable here, and Wildcat's prior experience with Express Wash Concepts and Club Car Wash gives us credibility that no other sponsor can claim in an initial conversation with a towing operator.</p>
+
+<div class="rec-box">
+  <div class="rec-box-header">Recommendation</div>
+  <div class="rec-verdict">PROCEED</div>
+  <div class="rec-body">
+    Authorize outreach to <strong>EP-01: Trantina Network</strong> (James Trantina III, MN — Midwest platform anchor) and <strong>EP-02: Rob's Automotive</strong> (PA Turnpike contracts — Northeast platform anchor). This memo requests authorization to initiate conversations, not to approve a transaction. Investment Committee approval for a specific deal will be sought separately upon execution of a letter of intent.
+  </div>
+</div>
+
+<h2 class="subsection">Key Metrics</h2>
+<table class="kpi-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th class="num">Value</th>
+      <th>Source / Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="label">US TAM — Towing Services</td>
+      <td class="num">~$12bn</td>
+      <td>IBISWorld ($11.3bn), Kentley ($12.8bn), TRAA ($12.5bn) — midpoint estimate</td>
+    </tr>
+    <tr>
+      <td class="label">Total operators</td>
+      <td class="num">40,000+</td>
+      <td>IBISWorld / Kentley Insights (9,542 companies with $1mm+ revenue)</td>
+    </tr>
+    <tr>
+      <td class="label">Top-10 combined market share</td>
+      <td class="num">~3%</td>
+      <td>Competitive landscape analysis; HHI extremely low</td>
+    </tr>
+    <tr>
+      <td class="label">Active targets identified</td>
+      <td class="num">46</td>
+      <td>Target tracker; 9 at score-5, 24 at score-4</td>
+    </tr>
+    <tr>
+      <td class="label">Fully enriched targets</td>
+      <td class="num">26 of 46</td>
+      <td>20 remaining at initial status</td>
+    </tr>
+    <tr>
+      <td class="label">Actionability score (0–5)</td>
+      <td class="num">4.0 / 5.0</td>
+      <td>Composite of market attractiveness, competitive dynamics, target availability, execution feasibility</td>
+    </tr>
+    <tr>
+      <td class="label">Entry multiple range</td>
+      <td class="num">3–5x EBITDA</td>
+      <td>Small operators; 6–8x for larger platforms with contracts / infrastructure</td>
+    </tr>
+    <tr>
+      <td class="label">Discount vs. analogous services</td>
+      <td class="num">40–60%</td>
+      <td>Car wash 6–10x, HVAC ~8x, pest control 6–8x (IBISWorld / PKF / RollUp Europe)</td>
+    </tr>
+    <tr>
+      <td class="label">Illustrative exit multiple</td>
+      <td class="num">7–10x EBITDA</td>
+      <td>Sector maturation + platform premium; see EP-01 / EP-02 returns</td>
+    </tr>
+    <tr>
+      <td class="label">Illustrative MOIC range</td>
+      <td class="num">2.5–2.7x</td>
+      <td>EP-01: ~2.5x; EP-02: ~2.7x (illustrative; see Section VII)</td>
+    </tr>
+    <tr>
+      <td class="label">Illustrative IRR range</td>
+      <td class="num">18–24%</td>
+      <td>EP-01: 18–22%; EP-02: 20–24% over 6-year hold</td>
+    </tr>
+    <tr>
+      <td class="label">Wildcat mandate fit score</td>
+      <td class="num">4.4 / 5.0</td>
+      <td>Equity check alignment (4), services/multi-unit (5), founder availability (5), buy-and-build (5), management depth (3)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- II. INVESTMENT THESIS                                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">II. Investment Thesis</h1>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 1</div>
+  <div class="thesis-statement">The Midwest and Northeast represent genuine PE white space — the highest-population-density US markets have zero active institutional towing platforms.</div>
+  <div class="thesis-evidence">The two operating PE-backed towing platforms are geographically contained: FirstLine/Seaside Equity ($1.4bn AUM, 15 partnerships since October 2022) covers the Western US; Guardian Fleet Services/CHIEF Capital (850+ trucks, 30+ locations) covers FL, GA, KY, and TX. Valor/Tailwind entered the Mid-Atlantic in January 2026. The Midwest (IL, OH, IN, MN) and Northeast (PA, NJ, NY) — home to the largest US population concentrations and some of the heaviest commercial trucking corridors in the country — are completely uncontested by institutional capital. Every score-5 target I have identified in those markets has never received a PE approach.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> A first mover in the Midwest and/or Northeast can establish density without competing against institutional capital on price or speed. The Trantina Network in Minnesota and Rob's Automotive in Pennsylvania are both uncontested. That will not be true in 18–24 months if the consolidation cycle follows the pattern established by car wash, HVAC, and pest control.</div>
+</div>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 2</div>
+  <div class="thesis-statement">Entry multiples of 3–5x EBITDA are 40–60% below analogous services — a structural mispricing driven by historical failure risk, not economic inferiority.</div>
+  <div class="thesis-evidence">Small towing operators ($1–5mm revenue) trade at 3–5x EBITDA on BizBuySell and in reported private transactions; larger platforms with municipal contracts and infrastructure trade at 6–8x. Car wash platforms enter at 6–10x, HVAC at approximately 8x, pest control at 6–8x, and collision repair at 5–7x (sources: IBISWorld, PKF O'Connor Davies, Focus Advisors, RollUp Europe). The towing discount is a function of three high-profile consolidation failures in 1997–2017, not of inferior unit economics — well-run diversified operators achieve 15–25% EBITDA margins, with storage and impound contributing 70–90% contribution margins at near-zero incremental cost.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> A platform that avoids the failure modes of prior attempts — excessive leverage, national ambition before density, motor-club-heavy revenue mix — can enter at 3–5x and exit at 7–10x as the sector matures. That multiple arbitrage is built into the thesis from the first acquisition, not dependent on future market conditions.</div>
+</div>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 3</div>
+  <div class="thesis-statement">The unit economics of heavy-duty and impound-focused operators are compelling and durable — this is categorically not the motor-club-compressed model that destroyed URSI.</div>
+  <div class="thesis-evidence">Heavy-duty towing averages $11,681 per dispatch (ATRI data), with invoices ranging from $250 to over $110,000 for complex recoveries. Premium hourly rates run $175–250/hour with limited motor club intermediation. Impound and vehicle storage generates $25–100 per vehicle per day at 70–90% contribution margin — a fixed-cost lot with near-zero incremental cost per additional vehicle. URSI's 8.4% achieved margin versus a 15% target stemmed specifically from a motor-club-heavy revenue mix. The score-5 targets I have identified — Trantina, Rob's Automotive, O'Hare Towing — are all characterized by diversified channel mixes, municipal rotation contracts, heavy-duty capability, and impound lot infrastructure.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> Operator selection is thesis execution. The screening criteria are explicit: prioritize operators with heavy-duty capability, impound lots, police rotation contracts, and motor club concentration below 40% of revenue. These operators exist, and at this stage of the market's development, most of them are available at 3–5x EBITDA.</div>
+</div>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 4</div>
+  <div class="thesis-statement">The regional consolidation model has been validated at scale — by Guardian, by FirstLine, and by James Trantina III himself, who has assembled 18 companies and 450 trucks without a dollar of PE capital.</div>
+  <div class="thesis-evidence">Guardian Fleet Services has scaled to 850+ trucks and 30+ locations in the Southeast. FirstLine Road Solutions has completed 15 partnerships across the Western US since October 2022. Most compellingly, James Trantina III — the proposed EP-01 CEO — has organically assembled a $31mm+ platform across 18 companies, 30+ locations, and 450 trucks in Minnesota. He has done it from scratch, as an operator, without PE infrastructure, demonstrating that towing consolidation is operationally feasible even without institutional capital behind it. The historical failures (URSI, RoadOne) were execution failures — too fast, too much leverage, wrong revenue mix — not conceptual failures of the thesis itself.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> The question is not whether towing consolidation works. It does. The question is who executes it and in which markets. Wildcat's advantage in EP-01 is that the answer to both questions is already identified: James Trantina III, Midwest, starting now.</div>
+</div>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 5</div>
+  <div class="thesis-statement">The Agero-Urgently merger (March 2026) accelerates rather than undermines the case for scale — preferred partner status becomes more valuable, not less, when one buyer controls dispatch for 150 million vehicles.</div>
+  <div class="thesis-evidence">Agero announced the acquisition of Urgently on March 13, 2026 at $5.50 per share, creating a combined dispatch platform covering 150 million+ vehicles and 13 million annual events. Agero already dispatches 30,000+ jobs per day to its independent operator network. The consolidation of the dispatch layer creates downward margin pressure for small independent operators who are price-takers, but creates meaningful negotiating leverage for a scaled platform with 30+ locations and verified dispatch performance across multiple markets. HONK Technologies (75,000+ truck network, $32.9mm raised) remains a viable alternative for operators seeking to diversify dispatch relationships.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> Build toward preferred provider status with Agero early — a platform with demonstrable response times and coverage across the Midwest or Northeast corridor has leverage that no independent operator can match. Revenue diversification (police rotation, commercial fleet, private pay majority) ensures Agero rate compression is manageable rather than existential.</div>
+</div>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 6</div>
+  <div class="thesis-statement">Wildcat possesses structural advantages that no prior towing consolidator has had: patient capital without a forced exit, direct car wash platform experience, and a potential management partner already operating at PE-equivalent scale.</div>
+  <div class="thesis-evidence">Wildcat's investment in Express Wash Concepts (2018) and Club Car Wash (2019) represents direct operational experience with the exact consolidation playbook — fragmented local services, founder partnership, density-first, shared services — that towing requires. The express car wash analogy is the most-cited in towing investment literature precisely because the parallels are structural. Wildcat's mandate imposes no forced exit timeline, which is critical: the prior failures (URSI, Carlyle/United Road) were both accelerated by capital structure constraints. Patient capital allows the density-first, 3–5 acquisitions per year pace that has never been attempted in this industry.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> In an initial conversation with James Trantina III, Wildcat's opening line is not "we've looked at your financials." It is: "We own two car wash platforms built exactly the way you've built your towing network. We're the right partner for the next chapter." That is a differentiated message no other sponsor can credibly deliver.</div>
+</div>
+
+<div class="thesis-block">
+  <div class="thesis-number">Thesis Point 7</div>
+  <div class="thesis-statement">Three prior consolidation failures are instructive but distinguishable — all failed on leverage, speed, and national ambition, none on the regional density model Wildcat would pursue.</div>
+  <div class="thesis-evidence">URSI acquired 41 companies for $210mm in Year 1 alone, achieved 8.4% EBITDA margins versus a 15% target, and declined from $20 to $0.50 per share on $84.7mm in cumulative net losses against $248.7mm in revenue. RoadOne completed 104 acquisitions in two years, generated operating losses on $156.5mm in revenue, and was divested by Miller Industries at a loss. Carlyle/Milestone loaded United Road Towing with $335mm in debt — a debt-to-EBITDA ratio incompatible with towing's lumpy seasonal cash flows — resulting in Chapter 11 in 2017. The meta-lesson across all three: the failure pattern is speed, leverage, and national scale before density. No one has ever attempted a patient, market-by-market, density-first, conservatively leveraged regional towing build.</div>
+  <div class="thesis-implication"><span class="implication-label">Wildcat implication:</span> The failure pattern is the roadmap in reverse. The IC will scrutinize our approach against each failure mode — Section VI addresses each one directly with specific, non-negotiable operating parameters.</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- III. MARKET OVERVIEW                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">III. Market Overview</h1>
+
+<h2 class="subsection">Industry Structure</h2>
+<p>The US towing services industry (NAICS 488410) encompasses the towing of light-duty, medium-duty, and heavy-duty motor vehicles for roadside assistance, accident recovery, police and municipal impound, private property enforcement, and incidental services (jumpstart, lockout, fuel delivery, vehicle storage). Total industry revenue is approximately $12bn in 2024–2025, based on a cross-referenced midpoint of IBISWorld ($11.3bn, 2025), Kentley Insights ($12.8bn, 2024), WifiTalents ($10.8bn, 2023), and TRAA ($12.5bn estimate). Growth has been modest — 2–4% nominal CAGR — but steady, tracking vehicle miles traveled and the aging US vehicle fleet.</p>
+
+<p>The defining structural characteristic of this industry is atomistic fragmentation. There are approximately 40,000 operators in the US; the top 10 collectively account for approximately 3% of industry revenue. Approximately 38,000 of those operators are owner-operators running 1–4 trucks. Fewer than 200 companies exceed $10mm in annual revenue, and only one exceeds $50mm (United Road Towing, post-Chapter 11, approximately $200mm). The HHI index is extremely low. This is the most fragmented major services industry I have encountered in Wildcat's research pipeline — more fragmented, at an earlier stage of institutionalization, than car wash was in 2010.</p>
+
+<h2 class="subsection">Value Chain and Revenue Structure</h2>
+<p>The towing industry's value chain runs from call origination through dispatch, physical towing, vehicle storage, and (in some cases) vehicle remarketing. There are five distinct payment channels, each with a different margin profile:</p>
+
+<ul class="body-list">
+  <li><strong>Motor club / insurance</strong> (est. 30–40% of industry revenue): AAA (57–58mm members, 27–30mm roadside calls/year) and Agero (30,000+ dispatches/day) route volume to operators at negotiated below-market rates ($48–75 for a standard tow vs. $75–200 private-pay). Operators are pure price-takers in this channel. High volume, lowest margin.</li>
+  <li><strong>Police / municipal rotation</strong> (est. 20–30%): Law enforcement dispatches via rotation lists. Storage fees accrue daily ($25–100/day per vehicle, often for 5–30 days). Entry barrier is qualification (facility inspection, insurance minimums, equipment, response time guarantees), but once qualified the position is durable. Highest lifetime value per dispatch event.</li>
+  <li><strong>Private pay — consumer direct</strong> (est. 15–25%): Highest per-tow revenue ($75–200+). Distressed purchase dynamic — a stranded motorist's comparison shopping window is approximately zero. Google reviews and local SEO drive this volume; 4.8-star operators with 500+ reviews dominate local search results in ways that compound over years.</li>
+  <li><strong>Commercial fleet / dealer</strong> (est. 10–15%): Volume contracts at negotiated rates with fleet operators, auto dealers, body shops. Predictable recurring revenue; medium margin.</li>
+  <li><strong>Private property / non-consent</strong> (est. 5–10%): Apartment complexes, hospitals, parking enforcement. Vehicle owner pays; property manager pays nothing. Growing regulatory scrutiny in some jurisdictions.</li>
+</ul>
+
+<p>Impound and vehicle storage deserves particular emphasis. It is the highest-margin segment in the value chain — 70–90% contribution margin — because the cost structure is fixed (lot lease/ownership, fencing, cameras, insurance) while revenue accrues daily on each vehicle stored. A single police impound generating 10 days of storage at $50/day produces the same revenue as five standard motor club tows. Operators with well-located lots and strong municipal rotation positions use storage to subsidize below-cost motor club volume and drive blended margins well above industry averages. Every target screening process should weight lot capacity and police rotation contracts heavily.</p>
+
+<h2 class="subsection">Key Segments</h2>
+<table class="kpi-table">
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th class="num">Est. Size</th>
+      <th class="num">Share</th>
+      <th class="num">Growth</th>
+      <th>Attractiveness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Light-duty consumer towing</td>
+      <td class="num">$6.5–7.0bn</td>
+      <td class="num">~58%</td>
+      <td class="num">3–5%</td>
+      <td>Medium — high volume but motor club rate pressure</td>
+    </tr>
+    <tr>
+      <td>Heavy-duty towing and recovery</td>
+      <td class="num">$3.0–4.0bn</td>
+      <td class="num">~28%</td>
+      <td class="num">5–7%</td>
+      <td><strong>High</strong> — avg. $11,681/dispatch, no motor club intermediary</td>
+    </tr>
+    <tr>
+      <td>Vehicle storage / impound</td>
+      <td class="num">Bundled in above</td>
+      <td class="num">Up to 40% operator revenue</td>
+      <td class="num">3–5%</td>
+      <td><strong>High</strong> — 70–90% contribution margin, fixed cost base</td>
+    </tr>
+    <tr>
+      <td>Medium-duty / commercial fleet</td>
+      <td class="num">$1.0–1.5bn (inferred)</td>
+      <td class="num">~10%</td>
+      <td class="num">4–6%</td>
+      <td>Medium — $150–300/call, recurring fleet contracts</td>
+    </tr>
+    <tr>
+      <td>Roadside assistance (non-tow)</td>
+      <td class="num">Included in above</td>
+      <td class="num">10–15%</td>
+      <td class="num">2–4%</td>
+      <td>Low — motor club rates $12–35/call</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="subsection">Demand Drivers and Recent Developments</h2>
+<p>Structural demand is anchored in three durable tailwinds: (1) 298.7mm registered vehicles generating 3.279 trillion vehicle miles traveled in 2024 (+1.0% YoY, exceeding pre-COVID peaks); (2) average vehicle age of 12.8 years in 2025 — a record, with 23% of US vehicles 20+ years old (S&amp;P Global Mobility); and (3) AAA membership of 57–58mm members generating 27–30mm roadside calls annually. These drivers are not cyclical — they reflect fleet aging dynamics and travel behavior that will not reverse over a five-to-seven year investment horizon.</p>
+
+<p>Three recent market developments are directly relevant to the investment thesis. First, Agero's acquisition of Urgently (announced March 13, 2026, $5.50/share) creates a combined dispatch platform covering 150mm+ vehicles and 13mm annual events — the dominant intermediary between consumers and towing operators. This concentrates buyer power but also elevates the premium for scale: a 30-location platform negotiates differently with Agero than a 3-truck independent. Second, Copart (NASDAQ: CPRT) is increasingly self-handling salvage towing with approximately 800 owned vehicles handling ~25% of pickups — a demand risk for operators heavily dependent on salvage tow referrals, and a reason to deprioritize salvage-dependent targets. Third, Autura/Traxero's merger (October 2024) consolidates the towing SaaS market — the technology layer is being professionalized ahead of the operations layer, exactly the pattern that preceded major rollup waves in HVAC and pest control.</p>
+
+<h2 class="subsection">Why Now: The Inflection Point</h2>
+<p>The towing industry is at the same structural inflection point that car wash occupied in approximately 2010 and that HVAC occupied in approximately 2015. The technology layer is consolidating (Autura/Traxero, Agero/Urgently). The first institutional operators have emerged (Guardian, FirstLine) and are demonstrating that scale is achievable. Multiple arbitrage between entry and exit multiples is at its widest — the discount to analogous services is 40–60%. The Valor/Tailwind Mid-Atlantic entry in January 2026 signals that mainstream PE is beginning to identify the opportunity. Wildcat should be in the market now, not in 12–18 months when multiples compress and target competition intensifies.</p>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- IV. COMPETITIVE LANDSCAPE & PE ACTIVITY                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">IV. Competitive Landscape &amp; PE Activity</h1>
+
+<h2 class="subsection">Current PE Platforms</h2>
+<p>Three institutional platforms have emerged in the towing operations space, none of which are in the Midwest or Northeast:</p>
+
+<ul class="body-list">
+  <li><strong>FirstLine Road Solutions / Seaside Equity Partners</strong> ($1.4bn AUM, Fund I–III and Navigator I): 15 partnerships completed since October 2022 across the Western US. Partnership model rather than outright acquisition — may address the cultural resistance that killed URSI. Light-duty and roadside focus. No Midwest or Northeast presence.</li>
+  <li><strong>Guardian Fleet Services / CHIEF Capital</strong> (Source Capital Group / Backcast Partners): 850+ heavy-duty trucks, 30+ locations across FL, GA, KY, and TX. Southeast and Mid-South geography only. Heavy-duty focus avoids the motor club margin trap. Largest truck fleet among PE-backed towing platforms.</li>
+  <li><strong>Valor Capital / Tailwind</strong>: Announced Mid-Atlantic entry in January 2026. Virginia and Maryland geography. Limited additional public detail available at this stage.</li>
+</ul>
+
+<p>In addition, Genos Capital is building Kratos Towing at early stage with limited public information, and Ibrahim Capital has published a towing investment thesis but does not appear to operate a platform.</p>
+
+<h2 class="subsection">Geographic White Space</h2>
+<p>The Midwest (IL, OH, IN, MN) and Northeast (PA, NJ, NY) are completely uncontested by institutional capital. These are among the largest US markets by population, commercial trucking volume, and towing call frequency. Every score-5 target I have identified in the Midwest and Northeast has never received an institutional PE approach. This will change, but it has not changed yet — and that is the investment window.</p>
+
+<h2 class="subsection">Entry Multiple Context</h2>
+<table class="kpi-table">
+  <thead>
+    <tr>
+      <th>Industry</th>
+      <th class="num">Entry Multiple</th>
+      <th class="num">Exit Multiple</th>
+      <th>Consolidation Stage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Towing — small operators</td>
+      <td class="num">3–5x EBITDA</td>
+      <td class="num">7–10x (est.)</td>
+      <td>Very early — 2 active platforms</td>
+    </tr>
+    <tr>
+      <td>Towing — larger platforms</td>
+      <td class="num">6–8x EBITDA</td>
+      <td class="num">—</td>
+      <td>Very early</td>
+    </tr>
+    <tr>
+      <td>Car wash (express)</td>
+      <td class="num">6–10x EBITDA</td>
+      <td class="num">12–18x EBITDA</td>
+      <td>Mature — 100+ PE platforms</td>
+    </tr>
+    <tr>
+      <td>HVAC</td>
+      <td class="num">~8x EBITDA</td>
+      <td class="num">12–15x EBITDA</td>
+      <td>Mature — 200+ PE platforms</td>
+    </tr>
+    <tr>
+      <td>Pest control</td>
+      <td class="num">6–8x EBITDA</td>
+      <td class="num">12–16x EBITDA</td>
+      <td>Late cycle — 50+ PE platforms</td>
+    </tr>
+    <tr>
+      <td>Collision repair</td>
+      <td class="num">5–7x EBITDA</td>
+      <td class="num">8–12x EBITDA</td>
+      <td>Mid-cycle — 10+ PE platforms</td>
+    </tr>
+  </tbody>
+</table>
+<p class="footnote">Sources: car wash — First Page Sage, RollUp Europe; HVAC — PKF O'Connor Davies; pest control — industry reports; collision repair — Focus Advisors; towing — BizBuySell, Ibrahim Capital, private transaction intelligence.</p>
+
+<h2 class="subsection">The Window Is Open but Narrowing</h2>
+<p>The Tailwind/Valor Mid-Atlantic entry in January 2026 is the clearest available signal that mainstream PE is identifying the towing opportunity. The sequential pattern in other services industries is well-documented: early movers build density at attractive multiples, sector maturation compresses entry multiples, and late entrants pay 6–8x for what was available at 3–4x two years prior. The absence of PE in the Midwest and Northeast in early 2026 is an anomaly. It is not a permanent condition.</p>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- V. TARGET UNIVERSE                                       -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">V. Target Universe</h1>
+
+<h2 class="subsection">Overview</h2>
+<p>I have identified 46 active targets across the Midwest and Northeast. The target universe was built through Grata API enrichment, geographic filtering (IL, OH, IN, MN, PA, NJ, NY focus), size screening ($5–50mm platform candidates, $1–5mm add-on candidates), and a scoring rubric assessing revenue scale, channel mix quality, municipal contract depth, heavy-duty capability, founder profile, and institutional readiness. 26 of 46 targets are fully enriched; 20 remain at initial status and will be completed in the 60-day workplan.</p>
+
+<h2 class="subsection">Score Distribution</h2>
+<table class="score-table">
+  <thead>
+    <tr>
+      <th>Score</th>
+      <th>Count</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>5 — Strong platform candidate</strong></td><td>9</td><td>Platform or high-quality add-on, named founder, confirmed financials</td></tr>
+    <tr><td>4 — Good add-on candidate</td><td>24</td><td>Meets most criteria; needs further enrichment</td></tr>
+    <tr><td>3 — Monitor</td><td>8</td><td>Partial information; questionable fit on one dimension</td></tr>
+    <tr><td>2 — Low priority</td><td>5</td><td>Motor-club-heavy, missing lot, or management concerns</td></tr>
+  </tbody>
+</table>
+
+<h2 class="subsection">Platform Candidates — Score 5</h2>
+
+<p><strong>Trantina Network</strong> (EP-01 anchor — James Trantina III, Minnesota): ~$31mm revenue, 30+ locations, 450 trucks, 18 companies across MN and WI. Trantina has assembled this network organically, without PE capital, and at approximately 38 years of age has the tenure, the credibility, and the growth horizon to serve as CEO of a PE-backed platform. This is the highest-conviction target in the universe: the management solution and the platform acquisition are the same individual. No competing PE firm is known to have approached him. First proposed add-ons: O'Hare Towing ($17.4mm, Chicagoland, heavy-duty capability) and Superior Towing ($10–20mm, IL/WI corridor).</p>
+
+<p><strong>Rob's Automotive</strong> (EP-02 anchor — Robert Leipziger, Pennsylvania): ~$36.5mm revenue, 9 locations, PA Turnpike contracts covering 45 miles of highway. The PA Turnpike contracts are the defining characteristic — they are irreplaceable (won through competitive public bid, cannot be replicated by a new entrant without winning the same bid), government-backed, and generate recurring revenue independent of consumer demand cycles. Robert Leipziger is approximately 60+ and likely approaching a natural liquidity event horizon, but will require an external CEO solution as part of any transaction structure. Do not approach without a management candidate identified or in process. First proposed add-ons: Tumino's Towing (7 NJ locations, 75+ equipment) and McGann &amp; Chester Group (3 Pittsburgh impound yards).</p>
+
+<p>Seven additional score-5 targets comprise the add-on pipeline in both geographies. Full profiles are available in the target tracker spreadsheet.</p>
+
+<h2 class="subsection">Geographic Coverage</h2>
+<p>Midwest white space (IL, OH, IN, MN) is fully mapped; the Trantina Network serves as the regional anchor with identified bolt-ons in the Chicagoland market. Northeast coverage (PA, NJ, NY) is approximately 60% mapped; 20 targets remaining in the enrichment pipeline are concentrated in NJ, NY, and New England, with completion targeted within 60 days. No targets have been screened in New York City proper due to regulatory complexity and impound lot zoning constraints in the five boroughs.</p>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- VI. PRIOR FAILURE ANALYSIS                              -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">VI. Prior Failure Analysis</h1>
+
+<p>The IC will ask about the failures. This section addresses each directly. The conclusion is that all three failed on execution variables that Wildcat's proposed approach specifically avoids — none of them disprove the regional density thesis.</p>
+
+<h2 class="subsection">Failure 1: URSI / United Road Services Inc. (1997–2003)</h2>
+<p>URSI acquired 41 towing companies for $210mm in Year 1 of its existence, pursuing national scale before achieving local density. The result was $84.7mm in cumulative net losses on $248.7mm in peak revenue, an EBITDA margin of 8.4% against a 15% target, and a stock decline from $20 to $0.50. The failure modes were: acquisition pace that outran integration capability, cultural resistance from owner-operators who resented the transition from family business to corporate subsidiary, back-office integration costs that far exceeded projections, and a motor-club-heavy revenue mix that structurally capped margins regardless of operational improvement.</p>
+<p><strong>Wildcat's differentiation:</strong> Pace discipline is non-negotiable — 3–5 acquisitions per year maximum, market-by-market. The motor-club-heavy revenue problem is addressed through target selection, not post-acquisition remediation. The cultural resistance problem is addressed by backing an operator CEO (Trantina) who has peer credibility with the sellers we are asking to join the platform.</p>
+
+<h2 class="subsection">Failure 2: RoadOne (1997–2003)</h2>
+<p>RoadOne executed 104 acquisitions in two years, generating $156.5mm in peak revenue with sustained operating losses. Miller Industries, which had backed RoadOne, eventually divested the business at a significant loss. The failure mode was fundamentally the same as URSI — acquisition velocity that was operationally unmanageable — compounded by equipment safety standard variance across 104 disparate businesses and cultural resistance from operators who had not been adequately integrated before the next acquisition arrived. Revenue scale without margin improvement is not a business; it is a liability.</p>
+<p><strong>Wildcat's differentiation:</strong> 3–5 acquisitions per year maximum is a hard constraint, not a guideline. Each add-on must be operationally integrated — dispatch unified, insurance consolidated, back-office absorbed — before the next acquisition closes. Geographic clustering (Midwest before Northeast expansion) ensures that integration resources are not stretched across time zones and regulatory regimes simultaneously.</p>
+
+<h2 class="subsection">Failure 3: Carlyle Group / United Road Towing (2005–2017)</h2>
+<p>Carlyle and Milestone Partners invested in United Road Towing in 2005, eventually loading the business with $335mm in debt. The business could not service that capital structure through towing's seasonally lumpy, operationally complex cash flows, and filed for Chapter 11 in 2017. The debt-to-equity conversion wiped out sponsor equity entirely. United Road, the largest US towing company by trucks, demonstrates that even the most scaled operator in the industry cannot support institutional leverage levels that would be standard in less operationally complex services businesses.</p>
+<p><strong>Wildcat's differentiation:</strong> Entry leverage of 2–3x EBITDA maximum — a hard constraint. This is not aggressive conservatism; it is the lesson from the only institutional-scale towing bankruptcy in history. Wildcat's patient capital mandate eliminates the time pressure that forces over-leveraging; we do not need to optimize for a 5-year fund cycle.</p>
+
+<h2 class="subsection">The Common Thread</h2>
+<p>Speed, leverage, and national ambition before local density are the three failure modes. No prior attempt has employed: (a) a 3–5 acquisition per year pace within a defined regional geography, (b) conservative leverage at or below 3x EBITDA, (c) a founder-operator CEO with peer credibility among towing operators, and (d) patient capital without a forced exit horizon. That combination has never been tried in this industry. Wildcat's approach is genuinely differentiated, not incrementally differentiated.</p>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- VII. ENTRY PATHS                                         -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">VII. Entry Paths</h1>
+
+<div class="path-box">
+  <div class="path-header">Entry Path EP-01: Midwest Platform — Back Trantina as CEO and Equity Partner</div>
+  <div class="path-body">
+
+    <h3 class="subsubsection">Platform Anchor</h3>
+    <p>Trantina Network — James Trantina III (~38), Minnesota. Approximately $31mm revenue, 30+ locations, 450 trucks, 18 companies. Trantina has built organically what most PE sponsors spend $40–60mm to assemble. He is the most compelling founder-operator I have encountered in this research process. His age implies a 15–20 year growth horizon; his credibility with other towing operators eliminates the cultural resistance that killed URSI and RoadOne.</p>
+
+    <h3 class="subsubsection">Management Model</h3>
+    <p>Trantina stays as CEO and receives a meaningful equity rollover stake in the platform. He is not a passive seller — he is the operating partner. His involvement in add-on sourcing and integration is the central execution thesis of EP-01. Wildcat provides capital, shared services infrastructure, and the acquisition playbook. Trantina provides operator credibility, existing platform infrastructure, and the ability to have a peer-to-peer conversation with every Midwest towing founder we approach as an add-on target.</p>
+
+    <h3 class="subsubsection">First Add-Ons</h3>
+    <p>O'Hare Towing (~$17.4mm, Chicagoland, heavy-duty capability) and Superior Towing (~$10–20mm, IL/WI corridor). These extend the MN platform into the largest Midwest metro market and establish geographic continuity across the upper Midwest. Targeted at 3–5x EBITDA. Combined with the Trantina platform, the entry position at close of first add-ons is approximately $55–65mm revenue.</p>
+
+    <h3 class="subsubsection">Capital Requirements</h3>
+    <p>Platform equity check: $40–65mm (Trantina acquisition + first add-ons + working capital). Total equity to exit: $80–120mm over 5–7 years, inclusive of 3–5 add-ons per year. Within Wildcat's $150mm equity mandate per transaction.</p>
+
+    <h3 class="subsubsection">Illustrative Returns</h3>
+    <table class="fin-table">
+      <thead>
+        <tr>
+          <th class="left">Metric</th>
+          <th>Entry</th>
+          <th>Exit (Year 6)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="left">Revenue ($mm)</td><td>60</td><td>140</td></tr>
+        <tr><td class="left">EBITDA ($mm)</td><td>9</td><td>28</td></tr>
+        <tr><td class="left">EBITDA Margin</td><td>15.0%</td><td>20.0%</td></tr>
+        <tr><td class="left">EV Multiple</td><td>6.0x</td><td>9.0x</td></tr>
+        <tr><td class="left">Enterprise Value ($mm)</td><td>54</td><td>252</td></tr>
+        <tr><td class="left">Equity Invested ($mm)</td><td colspan="2">~100</td></tr>
+      </tbody>
+      <tfoot>
+        <tr class="total">
+          <td class="left">Illustrative MOIC</td>
+          <td colspan="2">~2.5x</td>
+        </tr>
+        <tr class="total">
+          <td class="left">Illustrative IRR</td>
+          <td colspan="2">18–22%</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p class="footnote">Illustrative only. Assumes 3–5 add-ons per year at 4x EBITDA average; 500bps margin improvement from scale (insurance, dispatch, shared services); 300bps multiple expansion from 6x to 9x as platform matures and sector institutionalizes. Sensitive to Trantina entry valuation and integration pace.</p>
+
+    <h3 class="subsubsection">Why EP-01 is the Highest-Conviction Path</h3>
+    <p>The management problem — historically the most frequent cause of towing platform failure — is solved before the first conversation. Trantina has already demonstrated that the rollup works. His peer credibility with other Midwest operators de-risks add-on sourcing. The Midwest regulatory environment (IL, OH, MN rate structures) is more operator-friendly than coastal markets. And the geographic white space is confirmed — no PE firm is in this market today.</p>
+  </div>
+</div>
+
+<div class="path-box">
+  <div class="path-header">Entry Path EP-02: Northeast Platform — PA Highway Corridor</div>
+  <div class="path-body">
+
+    <h3 class="subsubsection">Platform Anchor</h3>
+    <p>Rob's Automotive — Robert Leipziger (~60+), Pennsylvania. Approximately $36.5mm revenue, 9 locations, PA Turnpike contracts covering 45 miles of highway. The PA Turnpike contracts are the defining investment attribute: they are government-backed, competitively awarded through a formal public bid process, and cannot be replicated by a new entrant without winning the same process. No PE competitor currently in the towing space has a Northeast presence. These contracts represent a durable recurring revenue moat anchoring the Northeast thesis.</p>
+
+    <h3 class="subsubsection">Management Model</h3>
+    <p>Robert Leipziger is approximately 60+ and likely approaching a natural liquidity horizon. I do not recommend approaching Leipziger directly until a management candidate or path is identified. EP-02 requires recruiting an external CEO from adjacent PE-backed services — HVAC, pest control, or collision repair executives who have demonstrated local services multi-location operational competence. The ideal candidate has run a 20–40 location services business and is willing to relocate into a PE-backed operator role. Carrie Kupchin (Santa Fe Tow VP, institutional finance background) is a potential CFO/COO hire for the platform. Do not close EP-02 without a management solution in place.</p>
+
+    <h3 class="subsubsection">First Add-Ons</h3>
+    <p>Tumino's Towing (7 NJ locations, 75+ equipment pieces, natural extension of the PA Turnpike corridor into NJ) and McGann &amp; Chester Group (3 Pittsburgh impound yards, deep municipal relationship history). These establish the PA/NJ corridor position — natural highway coverage from Pittsburgh through Philadelphia and into northern NJ. Combined entry position at close of first add-ons: approximately $55–65mm revenue.</p>
+
+    <h3 class="subsubsection">Capital Requirements</h3>
+    <p>Platform equity check: $45–70mm (Rob's acquisition + first add-ons + working capital). Total equity to exit: $90–130mm over 5–7 years. Also within Wildcat's mandate.</p>
+
+    <h3 class="subsubsection">Illustrative Returns</h3>
+    <table class="fin-table">
+      <thead>
+        <tr>
+          <th class="left">Metric</th>
+          <th>Entry</th>
+          <th>Exit (Year 6)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="left">Revenue ($mm)</td><td>65</td><td>150</td></tr>
+        <tr><td class="left">EBITDA ($mm)</td><td>10</td><td>30</td></tr>
+        <tr><td class="left">EBITDA Margin</td><td>15.4%</td><td>20.0%</td></tr>
+        <tr><td class="left">EV Multiple</td><td>7.0x</td><td>10.0x</td></tr>
+        <tr><td class="left">Enterprise Value ($mm)</td><td>70</td><td>300</td></tr>
+        <tr><td class="left">Equity Invested ($mm)</td><td colspan="2">~110</td></tr>
+      </tbody>
+      <tfoot>
+        <tr class="total">
+          <td class="left">Illustrative MOIC</td>
+          <td colspan="2">~2.7x</td>
+        </tr>
+        <tr class="total">
+          <td class="left">Illustrative IRR</td>
+          <td colspan="2">20–24%</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p class="footnote">Illustrative only. Higher entry multiple than EP-01 reflects the PA Turnpike contract moat premium; offset by higher illustrative exit multiple (Northeast platform premium) and stronger underlying asset. Management solution is the primary execution risk; returns are contingent on closing this gap before or concurrent with the Rob's transaction close.</p>
+
+    <h3 class="subsubsection">Contingency</h3>
+    <p>Do not approach Leipziger directly until a management candidate is identified or in active recruitment. The sequence is: (1) authorize outreach to Skyway Capital Markets (Rob's intermediary, if any, or direct to Leipziger via advisor introduction) to assess process and timeline; (2) initiate CEO candidate sourcing in parallel; (3) proceed to LOI only when management solution is either in place or advanced. Rob's is a rare asset. Losing it because of a management gap we did not anticipate is an avoidable failure mode.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- VIII. VALUE CREATION FRAMEWORK                          -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">VIII. Value Creation Framework</h1>
+
+<h2 class="subsection">Multiple Expansion</h2>
+<p>The thesis is built on a 300–400bps multiple expansion from entry (3–5x for small operators, 6–7x for platform anchors) to exit (7–10x as the sector institutionalizes and the platform achieves scale). This is not speculative — it reflects the pattern in car wash (6–10x entry → 12–18x exit), pest control (6–8x → 12–16x), and collision repair (5–7x → 8–12x). The towing sector is at the beginning of that cycle. The platform premium — a scaled, multi-location towing operator with diversified revenue, institutional compliance, and a proven management team — commands a meaningful exit multiple premium versus the fragmented individual operators that constitute the entry pipeline. I expect the exit buyer universe to include strategic consolidators (United Road, Guardian, FirstLine at larger scale), adjacent services platforms seeking towing exposure, or a financial sponsor seeking a sector-scaled asset.</p>
+
+<h2 class="subsection">Revenue Synergies</h2>
+<p>Geographic coverage expansion is the primary revenue synergy: adding adjacent market operators creates density, accelerates response times, improves police rotation qualification, and expands commercial fleet contract eligibility. Police rotation expansion is the highest-value revenue lever — each new municipality where the platform qualifies for rotation adds near-zero incremental cost volume with storage fee upside. Commercial fleet contracts (Amazon DSPs, FedEx contractors, auto dealers) follow platform geographic coverage; a regional operator covering 5–8 MSAs is a more compelling fleet contract candidate than a single-market operator. Private pay volume grows with Google review accumulation — a branded platform with consistent service quality compounds local SEO advantage across locations over time.</p>
+
+<h2 class="subsection">Margin Improvement</h2>
+<p>The most reliable near-term margin driver is insurance group purchasing. Commercial auto insurance for towing averages $8,839/year per truck (national average); on-hook, garage keepers, general liability, and workers' compensation bring total insurance cost to approximately $15,000–25,000 per truck annually. At 50+ trucks, a platform can negotiate group rates and potentially access captive insurance structures, with estimated savings of 20–30%. On a 450-truck platform, a 25% insurance saving translates to approximately $1.7–2.8mm in annual EBITDA improvement at negligible incremental cost. Centralized back office — one controller, one HR function, one compliance officer serving all locations — eliminates duplicated owner-operator overhead from each add-on. Shared dispatch routing increases calls per truck per day through route optimization and overflow management across locations. The breakeven economics improve from 2–3 calls/day at motor club rates to a blended 1.5–2.0 calls/day as the channel mix improves.</p>
+
+<h2 class="subsection">Heavy-Duty Premium</h2>
+<p>Every add-on acquisition that lacks heavy-duty towing capability is an immediate EBITDA improvement opportunity. Adding a rotator ($475K+) or heavy-duty wrecker ($150–400K) to an add-on location that currently does light-duty only creates a premium revenue stream at the existing facility cost base — no additional lot, no additional dispatcher, no additional compliance infrastructure. Average heavy-duty dispatch invoice of $11,681 (ATRI) versus $75–200 for a standard light-duty tow is a 20–60x revenue per call improvement. Heavy-duty capability also establishes the operator as the preferred partner for commercial fleet contracts and 24/7 highway patrol coverage in that market.</p>
+
+<h2 class="subsection">Impound Lot Development</h2>
+<p>Every acquisition should include or actively develop impound lot capacity. Storage revenue — $25–100/day per vehicle at 70–90% contribution margin — is the margin engine of the business. The fixed cost structure (lot lease/ownership, security infrastructure) creates operating leverage that directly benefits from police rotation expansion. In markets where add-on targets lack lot access, the platform will evaluate lot acquisition or lease as an organic value creation initiative. Zoning restrictions in urban areas make existing lot positions — like McGann &amp; Chester's three Pittsburgh impound yards — particularly valuable.</p>
+
+<h2 class="subsection">Technology</h2>
+<p>Deploying a single Autura/Traxero dispatch and operations management instance across all platform locations centralizes call routing, performance reporting, compliance tracking, and billing across the entire fleet. Centralized dispatch routing across 30–50 locations reduces average response times — which directly affects police rotation list qualification and motor club performance ratings. TowBook (19% market share, 18,000+ operators) is a potential acquisition target or preferred integration partner for add-on operators currently on that system.</p>
+
+<h2 class="subsection">Channel Optimization</h2>
+<p>The platform target channel mix is: police rotation / municipal 30–40%, commercial fleet / dealer 20–25%, private pay 15–20%, motor club 15–25%, property management 5–10%. No single customer should exceed 15% of portfolio revenue. This mix produces blended margins in the 18–22% EBITDA range versus 8–12% for motor-club-heavy operators. Every add-on operator's channel mix will be assessed against this target at underwriting, and the post-close value creation plan will include explicit steps to reduce motor club concentration where it exceeds 40%.</p>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- IX. KEY RISKS                                           -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">IX. Key Risks</h1>
+
+<p>None of the risks below is a deal-breaker in isolation. Each has a defined mitigation. The combination of multiple risks materializing simultaneously — particularly leverage risk coinciding with a cultural integration failure — is the scenario that requires ongoing monitoring. The conservative capital structure (2–3x EBITDA maximum leverage) is the single most important risk mitigation across all dimensions.</p>
+
+<table class="risk-table">
+  <thead>
+    <tr>
+      <th style="width:22%">Risk</th>
+      <th style="width:7%">Severity</th>
+      <th style="width:7%">Likelihood</th>
+      <th style="width:44%">Mitigation</th>
+      <th style="width:7%">Deal-Breaker?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Agero-Urgently dispatch monopoly compresses operator margins.</strong> Combined 150mm+ vehicle platform gains concentrated buying power over independent tower pricing. Small operators have no alternative.</td>
+      <td><span class="badge badge-h">H</span></td>
+      <td><span class="badge badge-m">M</span></td>
+      <td>Build toward diversified channel mix: police rotation, commercial fleet, and private pay must represent majority of revenue. Target &lt;40% motor club concentration at portfolio level. Scale platform gives negotiating leverage — preferred provider status and coverage density that Agero needs as much as we do. HONK Technologies (75K+ trucks) is a viable alternative dispatch partner.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Labor market tightness — 28% annual turnover, 60–80K CDL shortage nationally, 42.9 per 100K fatality rate (15x national average).</strong> Structural, intensifying through 2025–2030.</td>
+      <td><span class="badge badge-h">H</span></td>
+      <td><span class="badge badge-h">H</span></td>
+      <td>Employer-of-choice positioning at scale: superior benefits, safety technology, career advancement paths, consistent scheduling vs. irregular owner-operator assignments. Centralized recruiting and retention programs amortized across platform. Higher base wages, partially offset by insurance and back-office scale savings. Driver safety technology investment (dashcam, alert systems) reduces incident rates and workers' comp expense.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Cultural resistance from owner-operators.</strong> The #1 historical integration failure mode in URSI and RoadOne. Towing owners are deeply independent; corporate oversight triggers attrition of key operators and police rotation relationships that follow them personally.</td>
+      <td><span class="badge badge-h">H</span></td>
+      <td><span class="badge badge-m">M</span></td>
+      <td>EP-01 mitigation is structural: Trantina as CEO means add-on sellers see a peer, not a financial buyer. EP-02 mitigation is contractual and cultural: retain Leipziger in advisory role, retain location managers under employment agreements, slow integration timeline (24–36 months per location). Partnership model rather than pure acquisition avoids the day-one flag change dynamic that triggers resistance.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Management depth deficit.</strong> No experienced towing platform CEO available on the open market. Industry lacks mid-level management talent due to owner-operator culture across all 40,000+ operators.</td>
+      <td><span class="badge badge-m">M</span></td>
+      <td><span class="badge badge-m">M</span></td>
+      <td>EP-01: Trantina is the specific solution. EP-02: recruit from adjacent PE-backed services (HVAC, collision repair, pest control) with demonstrated multi-location experience. Wildcat operational support from car wash experience provides de facto management bench for the first 12–18 months. CFO candidate: Carrie Kupchin (Santa Fe VP, institutional finance background) for EP-02.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Regulatory fragmentation.</strong> Towing rates, licensing requirements, impound rules, and non-consent regulations vary by state and municipality. 14% of tows resulted in non-compliance fines in 2023 (industry data).</td>
+      <td><span class="badge badge-m">M</span></td>
+      <td><span class="badge badge-l">L</span></td>
+      <td>Regional clustering within consistent regulatory environments — Midwest (IL, OH, MN) before expanding to markets with more complex regulatory structures. Centralized compliance function established early in platform build. Illinois, Ohio, and Minnesota rate structures are more operator-friendly than NYC/NJ coastal markets.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Copart vertical integration reduces salvage towing demand.</strong> Copart (~800 owned vehicles handling ~25% of salvage pickups) is progressively displacing independent operators in the salvage segment.</td>
+      <td><span class="badge badge-m">M</span></td>
+      <td><span class="badge badge-m">M</span></td>
+      <td>Target selection avoids operators dependent on salvage towing referrals. Platform focus is police rotation, commercial fleet, and private pay — segments Copart does not operate in. Salvage towing concentration flag in target scoring rubric.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Prior failure pattern repeats — speed and leverage risk.</strong> If pace discipline erodes under investor pressure, or if debt sizing mirrors prior institutional sponsors, the failure scenario is well-documented.</td>
+      <td><span class="badge badge-h">H</span></td>
+      <td><span class="badge badge-l">L</span></td>
+      <td>Hard constraints embedded in investment mandate: 3–5 acquisitions per year maximum (enforced at IC level, not just management), entry leverage 2–3x EBITDA ceiling (no exceptions without specific IC approval), no national scale ambition in first five years. Wildcat's patient capital mandate eliminates the fund cycle pressure that accelerated leverage decisions at Carlyle.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- X. RECOMMENDATION                                       -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<h1 class="section-title">X. Recommendation</h1>
+
+<div class="rec-box">
+  <div class="rec-box-header">Overall Verdict</div>
+  <div class="rec-verdict">PROCEED — Authorize Platform Development and Outreach</div>
+  <div class="rec-body">
+    I recommend that the Investment Committee authorize outreach to EP-01 (Trantina Network, Midwest) and EP-02 (Rob's Automotive, Northeast) as the two primary platform development paths. This is a theme approval, not a deal approval. Investment Committee sign-off on a specific transaction will be sought separately upon execution of a letter of intent, with full financial diligence, legal review, and management confirmation at that time.
+  </div>
+</div>
+
+<h2 class="subsection">EP-01: Midwest — Authorize Outreach to James Trantina III</h2>
+<p>Recommended outreach approach: warm introduction through George Metos (The Tow Broker) or the Towing and Recovery Association of America (TRAA) industry network, where Trantina is an active participant. The framing of the initial conversation is critical and should not lead with valuation or process — it should lead with partnership. Wildcat's opening message: patient capital partner, not financial buyer; reference the car wash consolidation experience (Express Wash Concepts, Club Car Wash) directly; position the conversation as "how do we help you get to 150 locations" rather than "we'd like to make you an offer." Target initial conversation within 30 days of IC authorization. Do not send an unsolicited letter — a warm introduction from a trusted industry contact is the right first step with an operator who has built independently and may be skeptical of financial buyers.</p>
+
+<h2 class="subsection">EP-02: Northeast — Authorize Process Inquiry and Management Sourcing</h2>
+<p>Recommended approach: process inquiry to Skyway Capital Markets regarding Rob's Automotive to assess whether a formal process is underway, expected timeline, and Leipziger's interest in a recapitalization versus outright sale. Simultaneously, initiate CEO candidate sourcing from adjacent PE-backed services (HVAC, pest control, collision repair) — specifically executives who have operated 20–40 location services businesses and have demonstrated integration capability. Do not approach Leipziger directly until a management candidate is identified or in active recruitment. The PA Turnpike contracts are the anchor; do not lose this asset by advancing into a transaction before the management gap is resolved.</p>
+
+<h2 class="subsection">Near-Term Workplan</h2>
+<table class="workplan-table">
+  <thead>
+    <tr>
+      <th style="width:12%">Horizon</th>
+      <th style="width:44%">Action</th>
+      <th style="width:22%">Owner</th>
+      <th style="width:22%">Timing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>30 days</strong></td>
+      <td>Warm introduction to James Trantina III via George Metos or TRAA network; framing as partnership conversation, not acquisition process</td>
+      <td>Ross / Deal Team</td>
+      <td>By April 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>30 days</strong></td>
+      <td>Process inquiry call with Skyway Capital Markets (or direct to Leipziger via advisor) to assess Rob's Automotive timeline and structure</td>
+      <td>Ross</td>
+      <td>By April 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>30 days</strong></td>
+      <td>Internal team briefing on towing theme — equip senior team (Drew, Jeff, Alan) with thesis summary and target profiles ahead of any external conversations</td>
+      <td>Ross</td>
+      <td>By April 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>60 days</strong></td>
+      <td>CEO candidate sourcing for EP-02 — identify 3–5 candidates from adjacent PE-backed services; initial screens completed</td>
+      <td>Ross / deal advisory</td>
+      <td>By May 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>60 days</strong></td>
+      <td>Complete enrichment pass on 20 remaining unenriched targets (NJ, NY, New England); refresh target tracker</td>
+      <td>Research Team</td>
+      <td>By May 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>60 days</strong></td>
+      <td>Operator field interviews — 3–5 towing operators in IL, OH, or MN for ground-truth on unit economics, municipal contract structure, and owner succession intent</td>
+      <td>Ross</td>
+      <td>By May 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>90 days</strong></td>
+      <td>Preliminary indication of interest letters (EP-01 and/or EP-02) if conversations warrant and process requires</td>
+      <td>Ross / Brian Rosenblatt</td>
+      <td>By June 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>90 days</strong></td>
+      <td>First-pass insurance broker engagement — assess group rate availability and potential captive structure at 50, 100, and 200+ truck scale</td>
+      <td>Ross / Operations</td>
+      <td>By June 17, 2026</td>
+    </tr>
+    <tr>
+      <td><strong>90 days</strong></td>
+      <td>IC update memo — status of outreach, any process developments, initial management candidate assessment</td>
+      <td>Ross</td>
+      <td>By June 17, 2026</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<p class="footnote" style="text-align:center;">This memorandum is prepared for internal Investment Committee use only. All financial figures are estimates or illustrative projections unless otherwise cited. Returns are illustrative and not a guarantee of future performance. This memo does not constitute approval of any specific transaction. Confidential — do not distribute.</p>
+<p class="footnote" style="text-align:center; margin-top:6px;">Data sources: IBISWorld, Kentley Insights, WifiTalents, TRAA, ATRI, S&amp;P Global Mobility, Hedges &amp; Company, Fortune Business Insights, AAA, Future Market Insights, BizBuySell, PKF O'Connor Davies, Focus Advisors, First Page Sage, RollUp Europe, Ibrahim Capital investment thesis. Competitive intelligence from public sources only. Research conducted March 17–18, 2026.</p>
+
+</body>
+</html>
