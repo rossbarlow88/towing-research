@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. Towing, Recovery &amp; Specialty Transport — Industry Services Deep Dive</title>
+<style>
+  :root {
+    --navy: #1a2744;
+    --slate: #334155;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --green: #16a34a;
+    --amber: #d97706;
+    --red: #dc2626;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Calibri', 'Segoe UI', system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+  /* Header */
+  .report-header {
+    background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+    color: white;
+    padding: 48px 40px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+  }
+  .report-header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 16px; opacity: 0.85; margin-bottom: 16px; }
+  .report-header .meta { font-size: 12px; opacity: 0.7; display: flex; gap: 24px; flex-wrap: wrap; }
+  .report-header .meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* Navigation */
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 32px;
+    margin-bottom: 32px;
+    columns: 2;
+    column-gap: 40px;
+  }
+  .toc h2 { font-size: 16px; color: var(--navy); margin-bottom: 12px; column-span: all; }
+  .toc a {
+    display: block;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 4px 0;
+    font-size: 13px;
+    break-inside: avoid;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* KPI Banner */
+  .kpi-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .kpi-card.green { border-left-color: var(--green); }
+  .kpi-card.amber { border-left-color: var(--amber); }
+  .kpi-card.red { border-left-color: var(--red); }
+  .kpi-card .number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    font-family: var(--mono);
+  }
+  .kpi-card .label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Sections */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+  }
+  .section h2 {
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .section h3 {
+    font-size: 16px;
+    color: var(--slate);
+    margin: 20px 0 10px 0;
+  }
+  .section h4 {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 16px 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section p { margin-bottom: 12px; }
+  .section ul, .section ol { margin: 8px 0 12px 24px; }
+  .section li { margin-bottom: 6px; }
+
+  /* Service Cards */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 16px;
+  }
+  .service-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .service-card-header {
+    padding: 16px 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .service-card-header h3 { color: white; margin: 0; font-size: 17px; }
+  .service-card-header .tag {
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .service-card-body { padding: 24px; }
+  .service-card-body .desc { margin-bottom: 16px; color: var(--text); }
+
+  .service-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  .service-detail-box {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .service-detail-box h5 {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .service-detail-box p, .service-detail-box ul {
+    font-size: 13px;
+    margin: 0;
+  }
+  .service-detail-box ul { margin-left: 16px; }
+  .service-detail-box li { margin-bottom: 3px; }
+
+  /* Color themes for service cards */
+  .bg-blue { background: linear-gradient(135deg, #1e40af, #3b82f6); }
+  .bg-indigo { background: linear-gradient(135deg, #3730a3, #6366f1); }
+  .bg-purple { background: linear-gradient(135deg, #6b21a8, #a855f7); }
+  .bg-emerald { background: linear-gradient(135deg, #065f46, #10b981); }
+  .bg-teal { background: linear-gradient(135deg, #115e59, #14b8a6); }
+  .bg-amber { background: linear-gradient(135deg, #92400e, #f59e0b); }
+  .bg-orange { background: linear-gradient(135deg, #9a3412, #f97316); }
+  .bg-rose { background: linear-gradient(135deg, #9f1239, #fb7185); }
+  .bg-slate { background: linear-gradient(135deg, #1e293b, #64748b); }
+  .bg-cyan { background: linear-gradient(135deg, #155e75, #22d3ee); }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 16px 0;
+    font-variant-numeric: tabular-nums;
+  }
+  thead th {
+    background: var(--navy);
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  thead th.num { text-align: right; }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tbody td.num {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+  tbody tr:hover { background: rgba(37,99,235,0.04); }
+  .total-row td {
+    border-top: 3px double var(--navy);
+    font-weight: 700;
+  }
+  .indent-1 { padding-left: 28px !important; }
+  .indent-2 { padding-left: 44px !important; }
+
+  /* Callouts */
+  .callout {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .callout.green { border-left-color: var(--green); background: #f0fdf4; }
+  .callout.amber { border-left-color: var(--amber); background: #fffbeb; }
+  .callout.red { border-left-color: var(--red); background: #fef2f2; }
+
+  /* Footnotes / Sources */
+  .source-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    vertical-align: super;
+    margin-left: 2px;
+  }
+  .sources-section {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .sources-section a { color: var(--accent); word-break: break-all; }
+
+  /* Comparison bars */
+  .bar-container { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+  .bar-label { width: 140px; font-size: 12px; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 22px; background: #f1f5f9; border-radius: 4px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; color: white; font-weight: 600; }
+
+  /* Print */
+  @media print {
+    body { background: white; font-size: 10pt; }
+    .container { padding: 0; max-width: 100%; }
+    .report-header { border-radius: 0; page-break-after: always; }
+    .section { border: none; border-bottom: 1px solid #ccc; border-radius: 0; padding: 20px 0; }
+    .toc { page-break-after: always; }
+    .kpi-banner { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════ HEADER ═══════════════════════════════════════════════ -->
+<div class="report-header">
+  <h1>U.S. Towing, Recovery &amp; Specialty Transport</h1>
+  <div class="subtitle">Industry Services Deep Dive — From Source Report + Supplemental Research</div>
+  <div class="meta">
+    <span>Wildcat Capital Management</span>
+    <span>March 19, 2026</span>
+    <span>Source: CommonFiles Industry Report + Web Research</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ TOC ═══════════════════════════════════════════════ -->
+<div class="toc">
+  <h2>Contents</h2>
+  <a href="#exec-summary">1. Executive Summary</a>
+  <a href="#market-size">2. Market Size &amp; Structure</a>
+  <a href="#demand-drivers">3. Core Demand Drivers</a>
+  <a href="#services-deep-dive">4. Services Deep Dive (10 Service Lines)</a>
+  <a href="#service-platform">5. Platform Architecture &amp; Service Funnel</a>
+  <a href="#unit-economics">6. Unit Economics by End Market</a>
+  <a href="#end-market-municipal">7. Municipal Towing</a>
+  <a href="#end-market-heavy">8. Heavy-Duty Towing &amp; Recovery</a>
+  <a href="#end-market-specialty">9. Specialty Transport</a>
+  <a href="#technology">10. Technology &amp; Operating Leverage</a>
+  <a href="#competitive">11. Competitive Landscape</a>
+  <a href="#investment">12. Investment Takeaways</a>
+  <a href="#sources">13. Sources</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════ KPI BANNER ═══════════════════════════════════════════════ -->
+<div class="kpi-banner">
+  <div class="kpi-card">
+    <div class="number">$12.7B</div>
+    <div class="label">Core Market (NAICS 488410, 2022)</div>
+  </div>
+  <div class="kpi-card green">
+    <div class="number">~12%</div>
+    <div class="label">CAGR 2016–2022 (Nominal)</div>
+  </div>
+  <div class="kpi-card amber">
+    <div class="number">~39,700</div>
+    <div class="label">Businesses Nationwide</div>
+  </div>
+  <div class="kpi-card">
+    <div class="number">~55K</div>
+    <div class="label">Vehicles Towed Daily (U.S.)</div>
+  </div>
+  <div class="kpi-card green">
+    <div class="number">$11,681</div>
+    <div class="label">Avg HD Crash Invoice (ATRI)</div>
+  </div>
+  <div class="kpi-card red">
+    <div class="number">70–90%</div>
+    <div class="label">Impound/Storage Contribution Margin</div>
+  </div>
+  <div class="kpi-card">
+    <div class="number">6.14M</div>
+    <div class="label">Police-Reported Crashes (2023)</div>
+  </div>
+  <div class="kpi-card amber">
+    <div class="number">88M</div>
+    <div class="label">Annual Roadside Assistance Calls</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ EXEC SUMMARY ═══════════════════════════════════════════════ -->
+<div class="section" id="exec-summary">
+  <h2>1. Executive Summary</h2>
+  <p>The U.S. towing, recovery, and specialty transport industry is a <strong>$12.7B core market</strong> (NAICS 488410 employer receipts, 2022) with ~12% nominal CAGR from 2016–2022 — driven by a mix of volume growth, complexity shift toward heavier vehicles and more complex recoveries, and cost pass-through in labor, fuel, and insurance. The broader addressable market including adjacent services (roadside assistance, specialty heavy haul, impound/storage) likely exceeds <strong>$15–18B</strong>.</p>
+
+  <p>The industry is <strong>highly fragmented</strong>: ~39,700 businesses, no operator above 5% share, and the typical firm generates only ~$320K in annual revenue — consistent with a long tail of single-yard, owner-operator businesses. This fragmentation is the structural underpinning of any platform-building thesis.</p>
+
+  <p>"Scale" in towing is not national branding — it is <strong>operational density + compliance + dispatch capability + fleet breadth</strong>. Municipal and state rotations frequently specify tight response times (e.g., 30 minutes), equipment and facility requirements, and process discipline. In heavy-duty, the equipment investment to meet state police rotation requirements can be ~$2.5M on the low end.</p>
+
+  <div class="callout green">
+    <strong>Platform thesis:</strong> Scaled operators increasingly position themselves as incident-response and vehicle-management <em>platforms</em> — centralized dispatch, multi-yard coverage, specialized transportation, catastrophe response, and back-office functions — rather than "a tow yard." Guardian Fleet Services and Vehicle Management Solutions (fka United Road Towing) exemplify this positioning.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ MARKET SIZE ═══════════════════════════════════════════════ -->
+<div class="section" id="market-size">
+  <h2>2. Market Size &amp; Structure</h2>
+
+  <h3>Market Definition</h3>
+  <p>This report uses a practical operator-centric definition: towing, recovery, and specialized transport services provided by towing/recovery businesses across (i) municipal/police-initiated activity, (ii) heavy-duty towing and recovery, and (iii) specialized transport/heavy haul adjacent to recovery. Public sizing is imperfect because activities can be booked under different NAICS codes depending on firm structure.</p>
+
+  <h3>Revenue Composition (Estimated)</h3>
+  <div style="max-width:600px; margin: 16px 0;">
+    <div class="bar-container">
+      <div class="bar-label">Municipal/Police</div>
+      <div class="bar-track"><div class="bar-fill" style="width:35%; background: linear-gradient(90deg, #1e40af, #3b82f6);">~35%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Heavy-Duty</div>
+      <div class="bar-track"><div class="bar-fill" style="width:25%; background: linear-gradient(90deg, #065f46, #10b981);">~25%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Consumer/Private Pay</div>
+      <div class="bar-track"><div class="bar-fill" style="width:18%; background: linear-gradient(90deg, #92400e, #f59e0b);">~18%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Roadside/Motor Club</div>
+      <div class="bar-track"><div class="bar-fill" style="width:12%; background: linear-gradient(90deg, #6b21a8, #a855f7);">~12%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Specialty Transport</div>
+      <div class="bar-track"><div class="bar-fill" style="width:6%; background: linear-gradient(90deg, #155e75, #22d3ee);">~6%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Other/Cat Response</div>
+      <div class="bar-track"><div class="bar-fill" style="width:4%; background: linear-gradient(90deg, #1e293b, #64748b);">~4%</div></div>
+    </div>
+  </div>
+
+  <h3>Fragmentation by Operator Tier</h3>
+  <p>~39,700 businesses, described as "highly fragmented" with no company exceeding 5% market share (IBISWorld). Fewer than 200 operators exceed $10M revenue. The median operator is a single-yard, local-response provider with limited ability to satisfy demanding RFP/rotation requirements across a metro footprint.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th class="num">Operators</th>
+        <th class="num">Trucks</th>
+        <th class="num">Est. Market Share</th>
+        <th>Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>National</strong></td>
+        <td class="num">1</td>
+        <td class="num">500+</td>
+        <td class="num">~0.5%</td>
+        <td>United Road / VMS only (750+ trucks, 500K dispatches/yr)</td>
+      </tr>
+      <tr>
+        <td><strong>Regional</strong></td>
+        <td class="num">~15</td>
+        <td class="num">50–500</td>
+        <td class="num">~2.5%</td>
+        <td>Guardian Fleet (850+ HD trucks, 30+ locations), FirstLine (15 partnerships since Oct 2022), AAA-affiliated</td>
+      </tr>
+      <tr>
+        <td><strong>Local Multi-Truck</strong></td>
+        <td class="num">~2,000</td>
+        <td class="num">5–50</td>
+        <td class="num">~25%</td>
+        <td>Acquirable platforms and add-ons; $1–10M revenue</td>
+      </tr>
+      <tr>
+        <td><strong>Owner-Operator</strong></td>
+        <td class="num">~38,000</td>
+        <td class="num">1–4</td>
+        <td class="num">~72%</td>
+        <td>Family businesses, sole proprietors; avg ~$300K revenue, 5–6 vehicles</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>Total</strong></td>
+        <td class="num"><strong>~40,000+</strong></td>
+        <td class="num">—</td>
+        <td class="num"><strong>100%</strong></td>
+        <td>Entry multiples: 3–5x EBITDA (small); 6–8x (platform)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>What "Scaled" Means in This Industry</h3>
+  <ul>
+    <li><strong>Multi-yard density</strong> across a metro/corridor for response-time grid compliance</li>
+    <li><strong>Centralized dispatch</strong> with redundancy, 24/7 staffing, GPS/telematics integration</li>
+    <li><strong>Fleet breadth:</strong> enough heavy-duty wreckers/rotators + support assets for complex incidents</li>
+    <li><strong>Back-office scale:</strong> billing discipline, compliance reporting, lien/impound processing, program management</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════ DEMAND DRIVERS ═══════════════════════════════════════════════ -->
+<div class="section" id="demand-drivers">
+  <h2>3. Core Demand Drivers</h2>
+  <p>A useful decomposition: <strong>Incidents + Enforcement + Uptime.</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:22%;">Driver</th>
+        <th>Metric / Evidence</th>
+        <th style="width:25%;">Implication</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Crash Volume</strong></td>
+        <td>~6.14M police-reported crashes in 2023, ~40.9K fatalities, ~2.44M injuries (NHTSA)</td>
+        <td>Enormous, persistent incident base drives police-initiated towing</td>
+      </tr>
+      <tr>
+        <td><strong>VMT Exposure</strong></td>
+        <td>3.279T miles in 2024 (+1.0% YoY); 298.7M registered vehicles (FHWA, Hedges &amp; Co.)</td>
+        <td>First-order proxy for "opportunities for failure"; 298.7M registered vehicles = enormous parc</td>
+      </tr>
+      <tr>
+        <td><strong>Vehicle Age</strong></td>
+        <td>Average vehicle age reached 12.8 years in 2025 (S&amp;P Global Mobility)</td>
+        <td>Aging fleet increases breakdown risk and collision complexity</td>
+      </tr>
+      <tr>
+        <td><strong>Freight / Fleet Uptime</strong></td>
+        <td>Heavy-duty towing demand linked to commercial fleet miles and cost of downtime</td>
+        <td>HD towing is economically and politically salient to trucking</td>
+      </tr>
+      <tr>
+        <td><strong>Weather &amp; Catastrophe</strong></td>
+        <td>27 billion-dollar weather/climate disasters in 2024 (NCEI); much higher recent event rate vs. long-run average</td>
+        <td>Cat response is increasingly programmatic, not merely opportunistic</td>
+      </tr>
+      <tr>
+        <td><strong>EV Proliferation</strong></td>
+        <td>EVs require flatbed transport (no neutral gear), heavier weight stresses tires, battery hazard protocols</td>
+        <td>Increases service complexity and creates pricing differentiation opportunities</td>
+      </tr>
+      <tr>
+        <td><strong>Infrastructure Spending</strong></td>
+        <td>~$2.16T total construction spending (2025, Census); ~$1.2T IIJA authorization</td>
+        <td>Specialty transport demand tailwind in certain geographies</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════ SERVICES DEEP DIVE ═══════════════════════════════════════════════ -->
+<div class="section" id="services-deep-dive">
+  <h2>4. Services Deep Dive — The 10 Service Lines of the Towing Industry</h2>
+  <p>Below is a comprehensive breakdown of every major service line that makes up the towing industry, combining data from the source report with supplemental research from trade publications, TRAA, and industry operators.</p>
+
+  <div class="service-grid">
+
+    <!-- ────────── 1. LIGHT-DUTY TOWING ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-blue">
+        <h3>1. Light-Duty Towing</h3>
+        <span class="tag">High Volume / Commodity</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Transport of passenger vehicles, motorcycles, and small trucks (&lt;10,000 lbs GVWR) using flatbed rollbacks or wheel-lift trucks. This is the highest-volume segment and the "entry point" for most towing operators. It encompasses consumer breakdown tows, accident scene removal, dealer/auction transport, and private-property impounds.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Base hookup fee: $75–$150 (varies by market)</li>
+              <li>Per-mile charge: $2.50–$7.00/loaded mile</li>
+              <li>After-hours/weekend premium: 25–50% surcharge typical</li>
+              <li>Winch-out adder: $50–$100 if vehicle off-road</li>
+              <li>Dollies / go-jacks: $25–$75 per set</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>Flatbed rollback (19–21 ft deck): $80K–$180K new</li>
+              <li>Wheel-lift wrecker: $60K–$120K new</li>
+              <li>Integrated wrecker: $90K–$160K</li>
+              <li>GPS/telematics, dash cameras standard</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>6.14M police-reported crashes annually (NHTSA)</li>
+              <li>~30M AAA roadside calls/year (motor club channel)</li>
+              <li>Aging vehicle fleet (avg 12.8 yrs) increasing breakdowns</li>
+              <li>EV growth shifting mix toward flatbed-required tows</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Low single-digit unit volume growth</li>
+              <li>Pricing growth driven by CPI, fuel, insurance pass-through</li>
+              <li>Motor club reimbursement rates often lag provider costs — margin pressure point</li>
+              <li>EV surcharges emerging ($75 surcharge approved in LA for 2026)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:16px;">
+          <strong>PE Relevance:</strong> Light-duty is the volume engine that fills dispatcher capacity and feeds reputation/reviews, but margin is competitive. Strategic value is in <em>density</em> — enough trucks staged across a metro to hit 30-minute response times consistently.
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 2. MEDIUM-DUTY TOWING ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-indigo">
+        <h3>2. Medium-Duty Towing</h3>
+        <span class="tag">Growing Segment</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Transport of box trucks, delivery vans, RVs, motor homes, shuttle buses, and work trucks (10,001–26,000 lbs GVWR). This segment has grown meaningfully with the explosion of last-mile delivery fleets (Amazon DSPs, FedEx Ground contractors) and the RV market. Medium-duty sits in the "sweet spot" between commodity light-duty and capex-heavy heavy-duty.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Hookup fee: $150–$350</li>
+              <li>Per-mile: $4–$8/loaded mile</li>
+              <li>Hourly rate (recovery): $200–$400/hr</li>
+              <li>Fleet contract rates typically 15–25% below spot</li>
+              <li>Storage: $50–$100/day</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>Medium-duty wrecker (F-550/F-650 chassis): $120K–$250K</li>
+              <li>Medium flatbed (24–26 ft deck): $100K–$200K</li>
+              <li>Landoll-style trailer for equipment: $80K–$150K</li>
+              <li>Extended reach wheel-lift capability</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>E-commerce/last-mile delivery fleet expansion</li>
+              <li>RV market: ~500K+ units shipped annually, aging fleet</li>
+              <li>Food truck / mobile services growth</li>
+              <li>Municipal fleet maintenance contracts</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Mid-single-digit growth, driven by delivery fleet expansion</li>
+              <li>Fleet contracts (Amazon, FedEx, UPS) provide volume predictability</li>
+              <li>RV market cyclical but structurally larger post-COVID</li>
+              <li>Electric delivery van transition creates new complexity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 3. HEAVY-DUTY TOWING & RECOVERY ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-emerald">
+        <h3>3. Heavy-Duty Towing &amp; Recovery</h3>
+        <span class="tag">Margin Engine / Moat</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Recovery and transport of vehicles at or above ~26,001 lbs GVWR: tractor-trailers, large buses, refuse trucks, cement mixers, construction equipment. Includes towing, uprighting, winching, load shifts, debris handling, and cargo recovery. This is the <strong>highest-margin, highest-moat</strong> segment in towing — complexity, capex, and safety risk dramatically narrow the credible competitor set.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model (Invoice-Based Data)</h5>
+            <ul>
+              <li><strong>Heavy wrecker (recovery):</strong> median $582/hr</li>
+              <li><strong>Rotator:</strong> median $1,137/hr</li>
+              <li><strong>Rollback:</strong> median $270/hr</li>
+              <li><strong>Basic HD tow:</strong> median $291/hr</li>
+              <li>Extra labor: $105/person/hr; supervisor: $195/hr</li>
+              <li>Daily storage: median $120/day (truck+trailer+cargo)</li>
+              <li>Admin fee: ~5.1% of pre-tax bill when present</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li><strong>Heavy-duty wrecker:</strong> $350K–$600K</li>
+              <li><strong>Rotator (50–75 ton):</strong> $1.0M–$1.8M+</li>
+              <li><strong>Lowboy trailer:</strong> $80K–$200K</li>
+              <li>Air cushion recovery systems: $50K–$100K</li>
+              <li>Support vehicles, light towers, absorbent kits</li>
+              <li>Rotation-eligibility equipment sets: ~$2.5M+ (low end)</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>Commercial truck VMT and freight volume</li>
+              <li>State police rotation programs (mandatory response)</li>
+              <li>Secondary crash prevention urgency (~20% of highway incidents are secondary)</li>
+              <li>Insurance company speed-of-clearance requirements</li>
+              <li>Increasing truck weights and cargo complexity</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Stable mid-single-digit growth; pricing outpaces volume</li>
+              <li>Capex barriers widening — rotator costs up 30%+ over 5 years</li>
+              <li>Federal scrutiny (FTC/FMCSA) on predatory billing: compliance moat for disciplined operators</li>
+              <li>Certification requirements (WreckMaster, state-specific) tightening</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout green" style="margin-top:16px;">
+          <strong>Why This Segment Matters Most:</strong> ATRI analyzed 490 crash-related heavy-duty invoices: <strong>average invoice $11,681</strong>, range $250 to $110,000+. Heavy-duty recovery profitability is driven by (i) equipment-hours captured, (ii) labor adders framed correctly, and (iii) storage/admin processes. Premium operators compete on "incident outcomes," not price. Maryland max rate schedules go up to <strong>$3,600/hr for 75+ ton rotators</strong>. Fewer than 5% of U.S. towing operators own rotator equipment. ATRI also found <strong>29.8% of crash invoices contained predatory billing</strong> — compliance discipline is both moat and mandate.
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 4. ROADSIDE ASSISTANCE ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-purple">
+        <h3>4. Roadside Assistance</h3>
+        <span class="tag">Volume / Density Builder</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Minor on-scene services dispatched through motor clubs (AAA), insurer programs, and OEM roadside packages: jump starts, tire changes, lockouts, fuel delivery, and basic tows. An estimated <strong>88M roadside assistance calls</strong> are placed annually in the U.S., with <strong>80% resolving without a tow</strong>. Dispatched through intermediary platforms — Agero alone handles 30K+ jobs/day (13M events/year). The U.S. roadside assistance market is estimated at <strong>$2.4B (2025)</strong>, projected to reach $3.7B by 2034 at 4.9% CAGR. This is the <strong>highest-frequency, lowest-ticket</strong> service line.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Jump start: $50–$85 (motor club rate); $75–$150 (private pay)</li>
+              <li>Lockout: $50–$100 (motor club); $75–$175 (private)</li>
+              <li>Tire change: $50–$85 (motor club); $75–$125 (private)</li>
+              <li>Fuel delivery: $50–$75 + fuel cost</li>
+              <li>Motor club reimbursement: often below true cost</li>
+              <li>Agero/network dispatches: $55–$95 avg reimbursement</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>Service van/pickup: $40K–$70K</li>
+              <li>Jump pack, slim jim set, tire tools</li>
+              <li>Fuel cans and safety equipment</li>
+              <li>Minimal capex — lowest barrier to entry in towing</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>AAA membership: ~64M members, ~32M calls/year</li>
+              <li>OEM roadside programs (standard on most new vehicles)</li>
+              <li>Insurer-bundled roadside (Geico, Progressive, etc.)</li>
+              <li>Aging vehicle fleet → more breakdowns</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Volume stable to slightly growing</li>
+              <li>Margin pressure: motor club rates lag provider cost inflation</li>
+              <li>Agero's acquisition of Urgently (announced 2025) consolidates buyer power</li>
+              <li>EV roadside (mobile charging) is an emerging sub-segment</li>
+              <li>App-based platforms (Honk, HONK) adding consumer-direct competition</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout amber" style="margin-top:16px;">
+          <strong>Margin Warning:</strong> Agero has explicitly analyzed provider cost pressure and notes that reimbursement rates can be margin-compressive when labor and fuel costs rise. The Agero–Urgently acquisition (<strong>March 2026, $5.50/share</strong>) creates a dispatch near-monopoly covering <strong>150M+ vehicles and 13M events/year</strong> — giving Agero potentially enormous purchasing power over fragmented towing supply. Motor club reimbursement rates ($12–$35/call per the research) are often well below true provider cost. Operators should manage motor club revenue to <strong>&lt;30% of total mix</strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 5. ACCIDENT/INCIDENT RECOVERY ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-rose">
+        <h3>5. Accident &amp; Incident Recovery</h3>
+        <span class="tag">Complex / High-Ticket</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Collision scene management including vehicle removal, debris cleanup, fluid spill containment, hazmat mitigation, and load salvage. Distinct from a "simple tow" — incident recovery involves multi-party coordination (police, fire, DOT, insurance adjusters) and specialized skills. Overlaps with heavy-duty recovery for commercial vehicle incidents.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Scene management fee: $150–$500 (light-duty); $500–$5,000+ (heavy)</li>
+              <li>Debris removal: $100–$300 per incident (light); $500–$2,000+ (heavy)</li>
+              <li>Fluid/hazmat cleanup: $250–$1,500+ depending on severity</li>
+              <li>Traffic control/safety: $75–$200/hr per person</li>
+              <li>Often billed to at-fault driver's insurer</li>
+              <li>Environmental cleanup subcontracted for major spills</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>All light/medium/heavy towing equipment (tiered by severity)</li>
+              <li>Spill containment kits, absorbent materials</li>
+              <li>Scene lighting (light towers, traffic cones/arrows)</li>
+              <li>Brooms, shovels, and cleanup tools</li>
+              <li>Personnel with Traffic Incident Management (TIM) training</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>FHWA emphasis on rapid incident clearance (TIM programs)</li>
+              <li>~20% of highway incidents are "secondary" — clearance speed is a public safety issue</li>
+              <li>Insurance company speed-of-settlement incentives</li>
+              <li>Environmental regulations on fluid spill containment</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Growing: collision severity increasing (distracted driving, heavier vehicles)</li>
+              <li>Environmental cleanup becoming a higher-value add-on</li>
+              <li>Federal TIM training requirements expanding</li>
+              <li>EV battery incident protocols adding complexity and training requirements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 6. SPECIALTY TRANSPORT ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-teal">
+        <h3>6. Specialty Transport &amp; Heavy Haul</h3>
+        <span class="tag">Utilization Engine</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Planned hauling of oversized, overweight, or non-standard assets using specialized tractors and trailers: disabled heavy equipment, industrial machinery, boats, aircraft components, transformers, construction materials, and project cargo. This is <strong>not reactive towing</strong> — it is scheduled, permitted, route-surveyed work that converts expensive fleet assets into planned production. Port markets create natural density hubs.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Per-move pricing: $500–$10,000+ depending on distance, weight, permits</li>
+              <li>Hourly rate: $200–$500/hr for specialized equipment</li>
+              <li>Mobilization/demobilization fees: $200–$1,000</li>
+              <li>Permit fees passed through + admin markup</li>
+              <li>Project-based contracts for ongoing industrial work</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>Specialized tractor (heavy-haul spec): $200K–$350K</li>
+              <li>Lowboy trailer: $80K–$200K</li>
+              <li>Landoll/tilt-deck trailer: $80K–$150K</li>
+              <li>RGN (Removable Gooseneck): $100K–$250K</li>
+              <li>Escort/pilot vehicles for oversized loads</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>$2.16T total construction spending (2025, Census)</li>
+              <li>~$1.2T IIJA infrastructure authorization ($550B "new")</li>
+              <li>Energy transition: wind turbine, solar, battery plant equipment moves</li>
+              <li>Port throughput (concentrated at top 10 U.S. gateways)</li>
+              <li>Industrial re-shoring / nearshoring trends</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Potentially fastest-growing segment (~10–20%+ in select niches)</li>
+              <li>Growth is lumpy and cycle-dependent — not a national constant</li>
+              <li>Payback ~2–2.5 years where contracted volumes exist</li>
+              <li>Highest economic utilization when planned; route surveys and permits reduce deadhead</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout green" style="margin-top:16px;">
+          <strong>Strategic Value:</strong> Specialty transport shifts the business mix from purely reactive to planned, schedulable work — compressing deadhead and improving asset utilization. This is the core reason towing platforms pursue this segment. Best markets: port-adjacent nodes (Savannah, Norfolk, Houston) and infrastructure capex corridors.
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 7. IMPOUND & STORAGE ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-amber">
+        <h3>7. Impound &amp; Storage Services</h3>
+        <span class="tag">70–90% Contribution Margin</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Vehicle and cargo storage following tows, including police impounds, insurance holds, evidence storage, and private-property tow storage. Includes administrative processes around releases, payments, lien processing, and auction of unclaimed vehicles. Storage is the <strong>single most important margin lever in a towing platform</strong> — contribution margins of <strong>70–90%</strong>. Some operators derive 30–50% of total revenue from storage. United Road / VMS sells 60K+ unclaimed vehicles annually through lien process. A lot costing $50K–$100K/month to operate can generate $150K–$300K+/month in storage fees when fully utilized.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Daily storage: $35–$75/day (light-duty); $75–$150+/day (heavy)</li>
+              <li>LA example: ~$59–$60/day for standard vehicles</li>
+              <li>Administrative/release fee: $25–$100 per release</li>
+              <li>Lien processing fees: $50–$200</li>
+              <li>Auction proceeds on unclaimed vehicles (after lien)</li>
+              <li>Key: revenue accrues daily with minimal incremental cost</li>
+              <li>Single police dept contract: 40–80 calls/mo = <strong>$6K–$28K/mo</strong></li>
+              <li>~850K DUI-related tows/year (mandatory impound)</li>
+              <li>Colorado regulated: $40.56/day; impound fee $211</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment / Assets Required</h5>
+            <ul>
+              <li>Secure fenced lot with lighting and cameras</li>
+              <li>Office/processing space for releases</li>
+              <li>Lot size: 50–500+ spaces depending on market</li>
+              <li>Real estate is the primary capital requirement</li>
+              <li>Tow vehicle for lot organization/moves</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>Municipal impound requirements (every police tow needs storage)</li>
+              <li>Insurance claim holds (vehicles pending inspection/settlement)</li>
+              <li>Private property towing (parking violations, abandoned vehicles)</li>
+              <li>Evidence holds (criminal investigations, DUI seizures)</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Steady growth tied to towing volume + rate escalation</li>
+              <li>High margin but regulated and reputationally sensitive</li>
+              <li>Predatory storage fees are a target of consumer protection regulation</li>
+              <li>Some jurisdictions cap storage rates or mandate release hours</li>
+              <li>EV storage may require additional safety protocols (fire risk)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout amber" style="margin-top:16px;">
+          <strong>Regulatory Note:</strong> Impound/storage is the most politically and reputationally sensitive service line. Only <strong>half of states currently set maximum impound/towing fees</strong> and only <strong>15 require invoice itemization</strong>. Colorado passed three consumer protection bills (2021–2024). Federal legislation has been proposed. The trajectory is clearly toward more regulation — but existing lots in zoning-restricted urban areas have durable, appreciating competitive advantage. Every acquisition should include or add lot capacity.
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 8. OFF-ROAD RECOVERY ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-orange">
+        <h3>8. Off-Road &amp; Technical Recovery</h3>
+        <span class="tag">Niche / High Skill</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Extraction of vehicles from non-roadway situations: mud, snow, ditches, embankments, water, and rollovers. Requires specialized rigging knowledge, winching technique, and often multi-vehicle setups. This is where "towing becomes engineering" — each recovery is a unique problem-solving exercise. Includes construction site recovery and agricultural equipment extraction.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Light-duty winch-out: $150–$400</li>
+              <li>Medium/heavy winch-out: $400–$2,000+</li>
+              <li>Complex multi-vehicle recovery: $2,000–$25,000+</li>
+              <li>Underwater/submerged vehicle recovery: $500–$5,000+</li>
+              <li>Often billed hourly plus equipment charges</li>
+              <li>No standard rate — highly situation-dependent</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>Winch-equipped wrecker (min 8,000 lb capacity light; 25+ ton heavy)</li>
+              <li>Snatch blocks, rigging straps, chains, shackles</li>
+              <li>Air bags/cushions for vehicle lifting</li>
+              <li>Off-road capable support vehicle</li>
+              <li>Knowledge of anchor points, physics of pull angles</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>Severe weather events (flooding, ice storms, snow)</li>
+              <li>Rural and suburban driving into off-road conditions</li>
+              <li>Construction site accidents</li>
+              <li>Agricultural equipment failures</li>
+              <li>Recreational off-roading mishaps</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Niche but high-value; grows with severe weather frequency</li>
+              <li>Increasingly professionalized (WreckMaster training levels)</li>
+              <li>Operator skill = pricing power; no commodity floor</li>
+              <li>Rural markets underserved — long-distance response premium</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 9. MOTORCYCLE & SPECIALTY VEHICLE TOWING ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-slate">
+        <h3>9. Motorcycle &amp; Specialty Vehicle Towing</h3>
+        <span class="tag">Niche / Premium</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Specialized transport of motorcycles, ATVs, exotic/luxury vehicles, classic cars, and other high-value or non-standard vehicles. Requires specialized equipment (motorcycle cradles, enclosed trailers, soft straps) and handling expertise. Often overlaps with enclosed auto transport for dealer-to-dealer and auction-to-buyer moves. Premium pricing reflects the risk profile — a scratch on a $200K exotic is a $20K+ claim.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model</h5>
+            <ul>
+              <li>Motorcycle tow: $75–$250 (local); $1.00–$1.50/mile (long distance)</li>
+              <li>Exotic/luxury flatbed: $150–$500 (local); premium per-mile rates</li>
+              <li>Enclosed transport: $0.75–$2.00/mile depending on vehicle value</li>
+              <li>White-glove service premium: 50–100% above standard rates</li>
+              <li>Dealer/auction transport contracts: negotiated per-unit</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Equipment Required</h5>
+            <ul>
+              <li>Motorcycle-specific cradle/wheel chock system</li>
+              <li>Flatbed with soft-tie straps (no chains on luxury vehicles)</li>
+              <li>Enclosed trailer: $30K–$80K</li>
+              <li>Multi-car enclosed hauler: $150K–$300K</li>
+              <li>Protective covers, padding materials</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>Motorcycle registrations: ~13M+ in U.S.</li>
+              <li>Exotic/luxury vehicle market growth</li>
+              <li>Online vehicle auction platforms (Bring a Trailer, Cars &amp; Bids)</li>
+              <li>Dealer-to-dealer and OEM recalls</li>
+              <li>Car show/concours circuit transport</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Niche but premium; grows with luxury/collector market</li>
+              <li>Online auction growth is a meaningful volume driver</li>
+              <li>Low claims tolerance = higher insurance cost for operators</li>
+              <li>Reputation and reviews drive referrals (Google, Yelp)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────── 10. LONG-DISTANCE & CATASTROPHE TRANSPORT ────────── -->
+    <div class="service-card">
+      <div class="service-card-header bg-cyan">
+        <h3>10. Long-Distance Transport &amp; Catastrophe Response</h3>
+        <span class="tag">Surge / Diversification</span>
+      </div>
+      <div class="service-card-body">
+        <p class="desc">Two related but distinct sub-segments: (1) <strong>Long-distance vehicle transport</strong> — interstate moves, dealer transfers, auction transport, snowbird relocation, military PCS moves; and (2) <strong>Catastrophe response</strong> — storm/disaster clearance, debris removal, mass-incident recovery, utility restoration support. Cat response is increasingly programmatic given the rising frequency of billion-dollar weather events.</p>
+
+        <div class="service-detail-grid">
+          <div class="service-detail-box">
+            <h5>Revenue Model — Long Distance</h5>
+            <ul>
+              <li>Per-mile: $1.00–$3.00/loaded mile (open); $1.50–$4.00 (enclosed)</li>
+              <li>Minimum charge: often $250–$500 base</li>
+              <li>Multi-vehicle discount on car carriers</li>
+              <li>Dealer/fleet contracts: volume-based pricing</li>
+              <li>Seasonal surcharges (snowbird season, winter)</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Revenue Model — Catastrophe</h5>
+            <ul>
+              <li>Pre-negotiated surge rates with municipalities/utilities</li>
+              <li>FEMA reimbursement rates for disaster-declared events</li>
+              <li>Equipment rates: $200–$1,000+/hr for specialized assets</li>
+              <li>Labor: premium rates (1.5–2x normal)</li>
+              <li>Mobilization/demobilization fees for out-of-market deployment</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Demand Drivers</h5>
+            <ul>
+              <li>27 billion-dollar weather events in 2024 (NCEI) — trend accelerating</li>
+              <li>Municipal/state pre-positioned cat response contracts</li>
+              <li>Utility company storm restoration support</li>
+              <li>Dealer network vehicle redistribution</li>
+              <li>Consumer interstate moves and relocations</li>
+            </ul>
+          </div>
+          <div class="service-detail-box">
+            <h5>Growth &amp; Outlook</h5>
+            <ul>
+              <li>Cat response: volatile but structurally growing with climate severity</li>
+              <li>Long-distance: stable, competitive with auto transport carriers</li>
+              <li>Cat response tests dispatch resilience and crew deployment capability</li>
+              <li>Pre-positioned contracts increasingly require scale and multi-state licensing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:16px;">
+          <strong>Platform Play:</strong> Catastrophe response monetizes surge capacity and is a true test of dispatch resilience. The 5-year moving average of billion-dollar events is dramatically higher than the long-run baseline, making this increasingly a <em>programmatic capability</em> rather than an opportunistic windfall. Operators with pre-positioned contracts and multi-state licensing have structural advantage.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end service-grid -->
+</div>
+
+<!-- ═══════════════════════════════════════════════ PLATFORM ARCHITECTURE ═══════════════════════════════════════════════ -->
+<div class="section" id="service-platform">
+  <h2>5. Platform Architecture — How Service Lines Fit Together</h2>
+  <p>A platform lens: the service lines form a <strong>"funnel"</strong> from high-frequency, lower-complexity activity into lower-frequency, higher-ticket and higher-adjacency-value work.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Service Lines</th>
+        <th>Strategic Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>High-Frequency Intake</strong></td>
+        <td>Roadside/motor club dispatch, light-duty towing</td>
+        <td>Creates frequent touches, builds routing density, fills dispatch capacity. Can be margin-compressive if reimbursement lags cost.</td>
+      </tr>
+      <tr>
+        <td><strong>Anchor / Entitlement</strong></td>
+        <td>Municipal/state rotations, impound programs</td>
+        <td>Provides recurring volume, legitimacy, law enforcement access. Anchors storage/impound economics. Politically and regulatorily constrained.</td>
+      </tr>
+      <tr>
+        <td><strong>Margin Engine</strong></td>
+        <td>Heavy-duty recovery, incident management</td>
+        <td>High-ticket with meaningful equipment and labor adders. This is where "premium operator" differentiation is most monetizable.</td>
+      </tr>
+      <tr>
+        <td><strong>Utilization Engine</strong></td>
+        <td>Specialty transport, heavy haul</td>
+        <td>Shifts expensive assets from reactive standby to planned, scheduled production. Highest economic utilization potential.</td>
+      </tr>
+      <tr>
+        <td><strong>Adjacency Profit Pool</strong></td>
+        <td>Storage/impound, lien processing, auction</td>
+        <td>Real estate-driven margin engine. Revenue accrues daily with minimal incremental cost once lot capacity exists.</td>
+      </tr>
+      <tr>
+        <td><strong>Surge Monetization</strong></td>
+        <td>Catastrophe response</td>
+        <td>Converts standby capacity into premium billing during weather events. Tests dispatch resilience.</td>
+      </tr>
+      <tr>
+        <td><strong>Platform Layer</strong></td>
+        <td>Centralized dispatch, program management, reporting</td>
+        <td>Creates operating leverage and differentiates roll-ups from "a collection of yards."</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════ UNIT ECONOMICS ═══════════════════════════════════════════════ -->
+<div class="section" id="unit-economics">
+  <h2>6. Unit Economics Comparison — Three Core End Markets</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th class="num">Municipal (LD, Police)</th>
+        <th class="num">Heavy-Duty Recovery</th>
+        <th class="num">Specialty Transport</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Revenue / Event</strong></td>
+        <td class="num">Low hundreds + storage<br><span style="font-size:11px;color:var(--text-muted);">LA: ~$190–$195 first hr + $59–$60/day</span></td>
+        <td class="num">$291/hr (basic tow) to $1,137/hr (rotator) + labor/storage/admin</td>
+        <td class="num">Varies widely; driven by planning &amp; utilization, not peak pricing</td>
+      </tr>
+      <tr>
+        <td><strong>Revenue / Truck (Annual)</strong></td>
+        <td class="num">$150K–$300K<br><span style="font-size:11px;color:var(--text-muted);">excl. storage</span></td>
+        <td class="num">$400K–$900K+<br><span style="font-size:11px;color:var(--text-muted);">rotators can exceed</span></td>
+        <td class="num">$300K–$700K+<br><span style="font-size:11px;color:var(--text-muted);">where scheduled + backhauls</span></td>
+      </tr>
+      <tr>
+        <td><strong>Contribution Margin</strong></td>
+        <td class="num">~25–40%<br><span style="font-size:11px;color:var(--text-muted);">higher w/ storage captured</span></td>
+        <td class="num">~35–55%<br><span style="font-size:11px;color:var(--text-muted);">highly utilization-sensitive</span></td>
+        <td class="num">~25–45%<br><span style="font-size:11px;color:var(--text-muted);">contract &amp; backhaul dependent</span></td>
+      </tr>
+      <tr>
+        <td><strong>Capex / Primary Asset</strong></td>
+        <td class="num">$100K–$200K</td>
+        <td class="num">$350K–$600K (wrecker)<br>$1.0M–$1.8M+ (rotator)</td>
+        <td class="num">High six figures (tractor + trailer set)</td>
+      </tr>
+      <tr>
+        <td><strong>Payback Period</strong></td>
+        <td class="num">3–5 years<br><span style="font-size:11px;color:var(--text-muted);">storage RE can dominate ROIC</span></td>
+        <td class="num">2.5–4 years (wrecker)<br><span style="font-size:11px;color:var(--text-muted);">rotators longer unless dense</span></td>
+        <td class="num">2–3 years (dense/contracted)<br><span style="font-size:11px;color:var(--text-muted);">longer in thin markets</span></td>
+      </tr>
+      <tr>
+        <td><strong>Physical Utilization</strong></td>
+        <td class="num">High (many calls), but short trips + deadhead limit economics</td>
+        <td class="num">Low (few events), but high economic value per billable hour</td>
+        <td class="num">Highest when planned; sensitive to permit delays</td>
+      </tr>
+      <tr>
+        <td><strong>Capital Intensity</strong></td>
+        <td class="num">Medium</td>
+        <td class="num">Very High</td>
+        <td class="num">High</td>
+      </tr>
+      <tr>
+        <td><strong>Skill Intensity</strong></td>
+        <td class="num">Medium-High (compliance)</td>
+        <td class="num">Very High (rigging, safety)</td>
+        <td class="num">High (permits, securement)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Key Insight — Dispatch Density:</strong> Dispatch density is the "hidden P&amp;L line." In both municipal and roadside channels, deadhead time and fleet staging swing truck economics more than headline per-tow rates. Response-time standards make density a bid requirement, not a nice-to-have.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ MUNICIPAL ═══════════════════════════════════════════════ -->
+<div class="section" id="end-market-municipal">
+  <h2>7. Municipal Towing — Deep Dive</h2>
+
+  <h3>How Contracts Are Won</h3>
+  <p>Municipal business is typically won through RFQ/RFP or rotation list qualification processes — resembling government procurement more than consumer services. Evaluation criteria include response time, facility location, insurance/indemnification, background checks, and operational procedures.</p>
+
+  <h3>Barriers to Entry</h3>
+  <ul>
+    <li><strong>Response times:</strong> often 30 minutes (one RFQ example); state police can be stricter (20 minutes highway, 30 elsewhere)</li>
+    <li><strong>Real estate:</strong> impound capacity in specified proximity to coverage area</li>
+    <li><strong>Compliance:</strong> background screening, process discipline, reporting cadence</li>
+    <li><strong>24/7 coverage cost:</strong> must maintain staffing even in low-call windows</li>
+  </ul>
+
+  <h3>Rate Setting &amp; Pricing Dynamics</h3>
+  <p>Municipal towing often operates under rate structures set/approved by local authorities, frequently linked to CPI-style methodologies. In Los Angeles, official police garage rates are determined through a formal annual process with CPI linkage — but real outcomes include multi-year catch-up adjustments and differentiated surcharges (including a recommended <strong>$75 EV tow surcharge for 2026</strong>).</p>
+
+  <div class="callout green">
+    <strong>EV Pricing Upside:</strong> LA materials recommend a $75 surcharge for EV tows effective 2026, indicating municipalities are acknowledging the operational complexity of EV handling. As EV penetration grows, this surcharge could become standard across jurisdictions and represent genuine pricing expansion for equipped operators.
+  </div>
+
+  <h3>Strategic Importance</h3>
+  <p>Municipal towing behaves like "entitlement volume" — persistent scene presence with law enforcement, valuable for reputation, training, and downstream storage economics. It can also act as a credential when pursuing state/federal or enterprise programs that value compliance culture.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════ HEAVY DUTY ═══════════════════════════════════════════════ -->
+<div class="section" id="end-market-heavy">
+  <h2>8. Heavy-Duty Towing &amp; Recovery — Deep Dive</h2>
+
+  <h3>What Separates Premium Operators from Commodity Towers</h3>
+  <p>The premium segment competes on <strong>"incident outcomes," not price.</strong></p>
+  <ul>
+    <li><strong>Operational excellence:</strong> arrive fast, clear safely — reducing secondary incident exposure. Requires training, SOPs, and sufficient assets staged in the right places.</li>
+    <li><strong>Billing discipline:</strong> miscellaneous charges are the #1 source of disputes and "predatory towing" allegations. Premium operators win by being transparent, documented, and consistent.</li>
+    <li><strong>Asset right-sizing:</strong> owning rotators and required "support items/services" expands the addressable incident set — hard to replicate without $2.5M+ investment.</li>
+  </ul>
+
+  <h3>Pricing Benchmarks (Federal Invoice Data)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Equipment / Service</th>
+        <th class="num">Median Hourly Rate</th>
+        <th>Context</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Heavy-duty wrecker (recovery)</td>
+        <td class="num">$582/hr</td>
+        <td>Used in crash-related recovery operations</td>
+      </tr>
+      <tr>
+        <td><strong>Rotator</strong></td>
+        <td class="num"><strong>$1,137/hr</strong></td>
+        <td>Highest-rate asset; limited supply nationwide</td>
+      </tr>
+      <tr>
+        <td>Rollback</td>
+        <td class="num">$270/hr</td>
+        <td>Standard flatbed for HD transport</td>
+      </tr>
+      <tr>
+        <td>Basic heavy-duty tow</td>
+        <td class="num">$291/hr</td>
+        <td>Non-recovery, straight tow</td>
+      </tr>
+      <tr>
+        <td>Extra labor</td>
+        <td class="num">$105/person/hr</td>
+        <td>Additional crew beyond operator</td>
+      </tr>
+      <tr>
+        <td>Supervisor labor</td>
+        <td class="num">$195/hr</td>
+        <td>On-scene supervisor presence</td>
+      </tr>
+      <tr>
+        <td>Daily storage (combined)</td>
+        <td class="num">$120/day</td>
+        <td>Truck + trailer + cargo storage</td>
+      </tr>
+      <tr>
+        <td>Administrative fee</td>
+        <td class="num">~5.1%</td>
+        <td>Of pre-tax total when present</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>State Maximum Rate Schedules (Maryland, February 2024)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Equipment Type</th>
+        <th class="num">Max Hourly Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Medium-duty recovery</td><td class="num">$425/hr</td></tr>
+      <tr><td>Heavy-duty recovery</td><td class="num">$700/hr</td></tr>
+      <tr><td>Rotator &le;49 ton</td><td class="num">$1,675/hr</td></tr>
+      <tr><td>Rotator 50–74 ton</td><td class="num">$2,150/hr</td></tr>
+      <tr><td><strong>Rotator &ge;75 ton</strong></td><td class="num"><strong>$3,600/hr</strong></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px; color:var(--text-muted);">Surcharges: +25% dusk-to-dawn and weekends; +50% during declared states of emergency. West Virginia schedule codifies $1,069/hr for 30–85 ton rotator with 5% admin fee. ATRI average crash invoice: <strong>$11,681</strong> (490 invoices, range $250–$110K+).</p>
+
+  <div class="callout red">
+    <strong>Regulatory Risk:</strong> Federal analysis (FTC/FMCSA) ties predatory towing concerns to heavy-duty invoice structure — miscellaneous charges, admin fees, and opaque billing. Platform operators must invest in standardized billing, photographic documentation, and compliance governance. This is both a moat and a landmine.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ SPECIALTY ═══════════════════════════════════════════════ -->
+<div class="section" id="end-market-specialty">
+  <h2>9. Specialty Transport — Deep Dive</h2>
+
+  <h3>Port vs. Non-Port Markets</h3>
+  <p>Port markets are structurally advantaged because they create "dense nodes" of import/export, chassis/container logistics, and industrial customers enabling higher asset utilization and lower deadhead. Top U.S. port gateways (LA/Long Beach, Savannah, Houston, Norfolk, Seattle/Tacoma) are natural density hubs.</p>
+
+  <h3>Infrastructure Tailwind</h3>
+  <p>Specialty transport is more levered to infrastructure and industrial investment than to passenger-vehicle incidents. Total construction spending of ~$2.16T (2025) and federal IIJA authorization (~$1.2T total, ~$550B "new") support a plausible demand tailwind, though growth will vary meaningfully by geography and customer vertical.</p>
+
+  <h3>Attractive Markets for Specialty Transport</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Market Tier</th>
+        <th>Cities / Corridors</th>
+        <th>Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tier 1: Multi-Line Density</strong></td>
+        <td>Atlanta, Dallas, Houston, Los Angeles</td>
+        <td>Freight hub + municipal volume + industrial adjacency + port access</td>
+      </tr>
+      <tr>
+        <td><strong>Port-Adjacent Nodes</strong></td>
+        <td>Savannah, Norfolk, Seattle/Tacoma</td>
+        <td>Concentrated throughput, chassis logistics, industrial customer base</td>
+      </tr>
+      <tr>
+        <td><strong>Weather/Cat Intensity</strong></td>
+        <td>Florida, Gulf Coast corridors</td>
+        <td>High severe-weather frequency → cat response + surge utilization</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════ TECHNOLOGY ═══════════════════════════════════════════════ -->
+<div class="section" id="technology">
+  <h2>10. Technology &amp; Operating Leverage</h2>
+
+  <h3>Dispatch &amp; Routing</h3>
+  <p>Technology is increasingly a competitive requirement, not a nice-to-have. Large networks use automated matching and AI-enabled dispatch; Urgently emphasizes AI-powered job-to-provider matching by location and specialty. Key platforms:</p>
+  <ul>
+    <li><strong>Autura / Traxero:</strong> merged October 2024, consolidating towing-specific dispatch and management software market</li>
+    <li><strong>Agero:</strong> largest dispatch intermediary (30K+ dispatches/day, 13M events/yr); B2B2C model; acquiring Urgently</li>
+    <li><strong>HONK Technologies:</strong> consumer-direct digital towing marketplace; $32.9M VC funded, 75K+ truck network</li>
+    <li><strong>TowBook:</strong> ~19% market share, 18K+ operators; tow management and billing software</li>
+    <li><strong>Global towing software market:</strong> $76M (2025), 8.9% CAGR — still very early innings</li>
+    <li><strong>55% of tows</strong> now booked via mobile apps; 78% fleet GPS/telematics adoption</li>
+  </ul>
+
+  <h3>Billing &amp; Documentation</h3>
+  <p>Heavy-duty complexity makes documentation a profit lever. The federal report explicitly notes that photographing recovery processes, standardizing miscellaneous charge descriptions, and maintaining clear SOPs can improve invoice defensibility. This is an operating implication for platform tech stacks.</p>
+
+  <h3>EV Readiness</h3>
+  <p>EVs introduce operational and safety complexity: battery hazards, potential delayed fires, and special storage handling. NHTSA guidance emphasizes treating HV systems as energized, avoiding HV cabling, and following vehicle-specific recovery guides. This creates both cost and pricing differentiation — operators with proper training and equipment can justify premium rates.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════ COMPETITIVE ═══════════════════════════════════════════════ -->
+<div class="section" id="competitive">
+  <h2>11. Competitive Landscape</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Player</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3"><strong>National/Super-Regional Operators</strong></td>
+        <td><strong>Guardian Fleet Services</strong></td>
+        <td>CHIEF Capital portfolio. <strong>850+ HD trucks, 30+ locations</strong> across FL, GA, KY, TX. Multi-state footprint, light/heavy/specialty fleet, centralized dispatch. Positioned as consolidator.</td>
+      </tr>
+      <tr>
+        <td><strong>Vehicle Management Solutions</strong> (fka United Road Towing)</td>
+        <td>Mill Point Capital portfolio. <strong>750+ trucks, 500K dispatches/yr, 300K impounds/yr, 60K vehicle sales/yr</strong>. Largest single operator. Post-Ch.11 (2017) repositioning to end-to-end vehicle management.</td>
+      </tr>
+      <tr>
+        <td><strong>FirstLine Road Solutions</strong></td>
+        <td>Seaside Equity Partners (~$1.4B AUM). <strong>15 partnerships since October 2022</strong>. Western U.S. focus. Partnership model (vs. acquisition) may address cultural resistance better.</td>
+      </tr>
+      <tr>
+        <td rowspan="3"><strong>Dispatch / Ecosystem Platforms</strong></td>
+        <td><strong>Agero</strong></td>
+        <td>Largest U.S. roadside dispatch platform: <strong>30K+ dispatches/day, 13M events/yr</strong>. Acquiring Urgently (March 2026, $5.50/share) to create 150M+ vehicle coverage near-monopoly.</td>
+      </tr>
+      <tr>
+        <td><strong>HONK Technologies</strong></td>
+        <td>Consumer-direct digital towing marketplace. <strong>$32.9M VC funded, 75K+ truck network</strong>. Disintermediation play targeting motor club model.</td>
+      </tr>
+      <tr>
+        <td><strong>AAA</strong></td>
+        <td><strong>57–58M members, 27–30M calls/year</strong>. Largest single source of motor-club volume. Sets rate benchmarks that smaller operators often follow.</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>Equipment Ecosystem</strong></td>
+        <td><strong>Miller Industries</strong> (MLR)</td>
+        <td>Largest publicly-traded towing equipment manufacturer. Century, Vulcan, Chevron brands. Sets equipment pricing benchmarks.</td>
+      </tr>
+      <tr>
+        <td><strong>Jerr-Dan</strong> (Oshkosh)</td>
+        <td>Major wrecker and carrier manufacturer. Competes with Miller in all weight classes. Command Zone AI systems (+8–12% cost premium).</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>Adjacent / Vertical</strong></td>
+        <td><strong>Copart</strong> (CPRT)</td>
+        <td>Salvage/auction leader. ~800 owned tow vehicles, internalizing ~25% of pickups. Vertical integration threat to storage-dependent operators.</td>
+      </tr>
+      <tr>
+        <td><strong>Autura / Traxero</strong></td>
+        <td>Merged October 2024. PE-backed towing SaaS consolidation. TowBook (~19% share, 18K+ operators) is the other major player. Global towing software market: $76M, 8.9% CAGR.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>What Makes a "True Platform" vs. a Collection of Yards</h3>
+  <p>Three integration outcomes define a real platform:</p>
+  <ol>
+    <li><strong>Density integration:</strong> dispatch optimized across yards so response-time compliance and utilization improve in the aggregate, not just locally</li>
+    <li><strong>Billing/compliance integration:</strong> standardized, defensible billing and reporting reduce disputes and regulatory risk — especially critical in heavy-duty</li>
+    <li><strong>Fleet &amp; capability integration:</strong> acquiring yards without investing in capability breadth (heavy-duty support, rotators, trained supervisors) fails to expand the "addressable incident set"</li>
+  </ol>
+</div>
+
+<!-- ═══════════════════════════════════════════════ INVESTMENT ═══════════════════════════════════════════════ -->
+<div class="section" id="investment">
+  <h2>12. Investment Takeaways</h2>
+
+  <h3>Why the Industry Can Be Attractive for PE</h3>
+  <ul>
+    <li>Fragmentation is real and persistent (~39.7K businesses, no player &gt;5%)</li>
+    <li>Procurement/compliance requirements create a natural path for scaled operators to win share</li>
+    <li>Heavy-duty exhibits high pricing and a narrower competitor set when properly capitalized</li>
+    <li>Entry multiples (3–5x EBITDA for small operators) are 40–60% below comparable roll-up industries</li>
+  </ul>
+
+  <h3>Why It Can Be Unattractive</h3>
+  <ul>
+    <li>Liability, insurance inflation, and reputational risk are first-order underwriting issues</li>
+    <li>Regulatory scrutiny on predatory towing practices shapes the political environment</li>
+    <li>Cultural resistance from owner-operators to corporate oversight</li>
+  </ul>
+
+  <h3>Historical Consolidation Failures — Lessons Learned</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attempt</th>
+        <th>Period</th>
+        <th>Strategy</th>
+        <th>Outcome</th>
+        <th>Key Lesson</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>URSI</strong></td>
+        <td>1997–2003</td>
+        <td>41 acquisitions for $210M in Year 1</td>
+        <td style="color:var(--red);">Failed — $84.7M net loss; stock $20 → $0.50</td>
+        <td>Speed outpaced integration; margin assumptions unrealistic for motor-club-heavy mix</td>
+      </tr>
+      <tr>
+        <td><strong>RoadOne</strong></td>
+        <td>1997–2003</td>
+        <td>104 acquisitions in 2 years</td>
+        <td style="color:var(--red);">Failed — operating losses; divested by Miller Industries</td>
+        <td>Revenue scale without margin improvement is destructive; operators culturally resistant to corporate oversight</td>
+      </tr>
+      <tr>
+        <td><strong>Carlyle / United Road</strong></td>
+        <td>2005–2017</td>
+        <td>PE buyout of largest operator</td>
+        <td style="color:var(--red);">Chapter 11 bankruptcy; $335M debt-to-equity conversion</td>
+        <td>High leverage on operationally complex, low-margin, lumpy-cash-flow business = failure mode</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <strong>Meta-lesson:</strong> All three failures involved speed and/or leverage — not the thesis itself. A patient, density-focused, market-by-market approach has never been attempted at institutional scale. Partnership models (FirstLine) may address cultural resistance better than acquisition models. Technology enablement (dispatch SaaS) did not exist in the 1997–2005 era.
+  </div>
+
+  <h3>Optimal Platform Revenue Mix (Judgment)</h3>
+  <div style="max-width:600px; margin: 16px 0;">
+    <div class="bar-container">
+      <div class="bar-label">LD Towing (police + pvt pay)</div>
+      <div class="bar-track"><div class="bar-fill" style="width:40%; background: linear-gradient(90deg, #1e40af, #3b82f6);">35–45%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Impound / Storage</div>
+      <div class="bar-track"><div class="bar-fill" style="width:25%; background: linear-gradient(90deg, #92400e, #f59e0b);">20–30%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Heavy-Duty Recovery</div>
+      <div class="bar-track"><div class="bar-fill" style="width:20%; background: linear-gradient(90deg, #065f46, #10b981);">15–25%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label">Medium-Duty / Fleet</div>
+      <div class="bar-track"><div class="bar-fill" style="width:12%; background: linear-gradient(90deg, #6b21a8, #a855f7);">10–15%</div></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-label" style="color:var(--red);">Motor Club (cap)</div>
+      <div class="bar-track"><div class="bar-fill" style="width:15%; background: linear-gradient(90deg, #dc2626, #f87171);">&lt;30%</div></div>
+    </div>
+  </div>
+
+  <h3>Best End Markets by Platform Strategy</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Strategy</th>
+        <th>End Market</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Best "Ballast"</strong></td>
+        <td>Municipal towing</td>
+        <td>Sustainable rate-setting, storage/impound economics, reputational legitimacy</td>
+      </tr>
+      <tr>
+        <td><strong>Best "High-Return Growth"</strong></td>
+        <td>Heavy-duty recovery</td>
+        <td>Density + disciplined billing + right fleet = highest returns. Invoice data supports revenue potential.</td>
+      </tr>
+      <tr>
+        <td><strong>Best "Utilization-Driven Growth"</strong></td>
+        <td>Specialty transport</td>
+        <td>Dense industrial/port nodes with contracted volumes. Planned work improves asset scheduling.</td>
+      </tr>
+      <tr class="total-row">
+        <td style="color:var(--red);"><strong>Avoid</strong></td>
+        <td>Opaque fee-dependent models</td>
+        <td>Predatory non-consensual practices (especially HD) are regulatory/legal landmines</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>M&amp;A Criteria (Practical)</h3>
+  <ol>
+    <li><strong>Acquire for density, not revenue:</strong> targets should fill response-time "white space" within a metro/corridor and improve dispatch efficiency</li>
+    <li><strong>Acquire capability ladders:</strong> heavy-duty and specialty acquisitions should add hard-to-build capabilities (rotators, trained supervisors, specialized trailers) and key customer relationships</li>
+    <li><strong>Integrate billing/compliance early:</strong> standardize schedules, documentation, and dispute handling where state police rotations and federal scrutiny intersect</li>
+  </ol>
+</div>
+
+<!-- ═══════════════════════════════════════════════ SOURCES ═══════════════════════════════════════════════ -->
+<div class="section sources-section" id="sources">
+  <h2>13. Sources</h2>
+  <p style="margin-bottom:12px;">Primary source: <em>U.S. Towing, Recovery, and Specialty Transport Industry Report</em> (CommonFiles). Supplemental research from web sources as noted.</p>
+
+  <h4>Government &amp; Regulatory</h4>
+  <ul>
+    <li><a href="https://www.bls.gov/cew/publications/employment-and-wages-annual-averages/2024/">BLS — Employment and Wages Annual Averages 2024</a> (NAICS 488410 receipts)</li>
+    <li><a href="https://www.transportation.gov/sites/dot.gov/files/2024-02/FTC%20FMCSA%20Comment%202.7.24.pdf">FTC/FMCSA — Comment on Predatory Towing Practices (Feb 2024)</a></li>
+    <li><a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813762">NHTSA — Traffic Safety Facts (2023 crash data)</a></li>
+    <li><a href="https://www.fhwa.dot.gov/policyinformation/statistics/2024/vm1.cfm">FHWA — Vehicle Miles Traveled Statistics (2024)</a></li>
+    <li><a href="https://ops.fhwa.dot.gov/aboutus/one_pagers/tim.htm">FHWA — Traffic Incident Management (TIM) Program</a></li>
+    <li><a href="https://www.census.gov/construction/c30/current/index.html">Census — Construction Spending ($2.16T, 2025)</a></li>
+    <li><a href="https://www.ncei.noaa.gov/access/billions/">NCEI — Billion-Dollar Weather and Climate Disasters</a></li>
+    <li><a href="https://www.nhtsa.gov/sites/nhtsa.gov/files/interimguide_electrichybridvehicles_012012_v3.pdf">NHTSA — EV/Hybrid Vehicle Towing &amp; Storage Safety Guide</a></li>
+    <li><a href="https://www.phmsa.dot.gov/legislative-mandates/bipartisan-infrastructure-law-bil-infrastructure-investment-and-jobs-act-iija">PHMSA — Bipartisan Infrastructure Law</a></li>
+    <li><a href="https://www.bts.gov/ports">BTS — U.S. Port Performance Data</a></li>
+  </ul>
+
+  <h4>Municipal &amp; State</h4>
+  <ul>
+    <li><a href="https://www.yakimawa.gov/services/purchasing/files/22508Q-Rotational-Towing_YPD_FINAL.pdf">Yakima, WA — Rotational Towing RFQ (representative municipal procurement)</a></li>
+    <li><a href="https://www.lapdpolicecom.lacity.org/111825/BPC_25-326.pdf">LAPD — Police Garage Towing Rates (2025/2026, including EV surcharge)</a></li>
+    <li><a href="https://www.lapdpolicecom.lacity.org/111924/BPC_24-303.pdf">LAPD — Police Garage Towing Rate Methodology (2024)</a></li>
+    <li><a href="https://www.psc.state.wv.us/Information/MaximumStatewideWreckerRates.pdf">WV PSC — Maximum Statewide Wrecker Rates (rate schedule)</a></li>
+    <li><a href="https://app.leg.wa.gov/rcw/default.aspx?cite=46.55.118">WA RCW 46.55.118 — Statutory rate limitation framework</a></li>
+  </ul>
+
+  <h4>Industry &amp; Market</h4>
+  <ul>
+    <li><a href="https://www.ibisworld.com/united-states/industry/automobile-towing/1206/">IBISWorld — Automobile Towing Industry Report (U.S.)</a></li>
+    <li><a href="https://www.spglobal.com/automotive-insights/en/blogs/2025/05/average-age-of-vehicle-in-us">S&amp;P Global Mobility — Average Vehicle Age (12.8 years, 2025)</a></li>
+    <li><a href="https://www.ftc.gov/system/files?file=ftc_gov%2Fpdf%2FR207011TRAAComment.pdf">TRAA — FTC Comment (industry trade association perspective)</a></li>
+    <li><a href="https://www.beaconfunding.com/blog/how-much-is-a-tow-truck-to-buy">Beacon Funding — Tow Truck Pricing Guide</a></li>
+  </ul>
+
+  <h4>Company / Operator</h4>
+  <ul>
+    <li><a href="https://guardianfleetservice.com/">Guardian Fleet Services</a> — multi-state platform operator</li>
+    <li><a href="https://guardianfleetservice.com/merger-deal-guardian-fleet-services/">Guardian Fleet Services — Merger/Deal Announcement</a></li>
+    <li><a href="https://millpoint.com/united-road-towing-announces-rebranding-changes-name-to-vehicle-management-solutions/">Mill Point Capital — Vehicle Management Solutions Rebrand</a></li>
+    <li><a href="https://www.agero.com/">Agero</a> — roadside dispatch platform</li>
+    <li><a href="https://blog.agero.com/agero-acquires-urgently">Agero — Urgently Acquisition Announcement</a></li>
+    <li><a href="https://blog.agero.com/the-service-provider-industry-needs-our-help-an-analysis">Agero — Service Provider Cost Pressure Analysis</a></li>
+    <li><a href="https://www.geturgently.com/service-providers">Urgently — Service Provider Portal</a></li>
+  </ul>
+
+  <h4>Legal / Litigation</h4>
+  <ul>
+    <li><a href="https://www.barclaydamon.com/webfiles/Publications/Transportation/2026/17.%20Predatory%20Towing/Modzelewski_s%20Towing%20_%20Storage_%20Inc_%20v_%20Comm_r%20of%20Motor%20Vehicles_353%20_n_%20486.Pdf">Modzelewski's Towing v. Commissioner of Motor Vehicles</a> (state police rotation requirements, capex testimony)</li>
+  </ul>
+
+  <h4>Market Research &amp; Data (Supplemental Web Research)</h4>
+  <ul>
+    <li>Kentley Insights — Towing Services ($12.8B, 2024)</li>
+    <li>WifiTalents — Towing Industry Statistics 2026 (segment breakdowns, 19M vehicles towed annually)</li>
+    <li>LookupAPlate — 18 Key U.S. Towing Industry Statistics (43,816 businesses, 55K daily tows)</li>
+    <li>ATRI — Towing and Recovery Costs Study ($11,681 avg HD invoice, 490 invoices analyzed, 29.8% predatory billing rate)</li>
+    <li>Verified Market Reports — Heavy Duty Towing Market ($5.7B by 2033, 6.1% CAGR)</li>
+    <li>Custom Market Insights — US Roadside Assistance Market ($2.4B 2025, projected $3.7B by 2034)</li>
+    <li>Maryland DOT — Maximum Tow Rates (Feb 2024) ($425–$3,600/hr by type)</li>
+    <li>FMCSA Docket FMCSA-2024-0124 — Transparency in Commercial Vehicle Towing Fees</li>
+    <li>USDOT — Protections Against Predatory Towing (junk fees support)</li>
+    <li>ATA — Anti-Predatory Towing Provision (House Appropriations FY2025)</li>
+    <li>Data Insights Market — Towing Software ($76M market, 8.9% CAGR)</li>
+    <li>Ibrahim Capital — Towing Investment Thesis (2024) (&lt;200 companies &gt;$10M, 3–5x entry multiples)</li>
+    <li>FleetOwner — Family Fleets Meet Big Business (operator profiles)</li>
+    <li>Eno Center for Transportation — VMT 2024 (3.279T miles, +1.0% YoY)</li>
+    <li>Hedges &amp; Company — 298.7M registered vehicles</li>
+  </ul>
+
+  <h4>Other</h4>
+  <ul>
+    <li><a href="https://autos.yahoo.com/just-look-world-largest-rotator-180000785.html">Yahoo Autos — World's Largest Rotator (~$1.5M+ pricing reference)</a></li>
+  </ul>
+</div>
+
+<div style="text-align:center; padding:24px; color:var(--text-muted); font-size:11px;">
+  Wildcat Capital Management &mdash; Confidential &mdash; March 19, 2026<br>
+  Source: CommonFiles Industry Report + Supplemental Web Research
+</div>
+
+</div><!-- end container -->
+</body>
+</html>
