@@ -187,6 +187,22 @@
   }
   .detail-section p { font-size: 13px; line-height: 1.5; }
   .no-results { padding: 40px; text-align: center; color: var(--text-light); font-size: 15px; }
+  .export-btn {
+    padding: 7px 16px;
+    border: 1px solid var(--navy);
+    background: white;
+    color: var(--navy);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.15s;
+  }
+  .export-btn:hover { background: var(--navy); color: white; }
+  .excel-btn { background: #217346; color: white; border-color: #217346; }
+  .excel-btn:hover { background: #1a5c38; border-color: #1a5c38; }
   @media print {
     .controls, .search-box { display: none; }
     .header { padding: 16px; }
@@ -235,6 +251,10 @@
       <option value="association-leader">Association Leader</option>
       <option value="adjacent-operator">Adjacent Operator</option>
     </select>
+  </div>
+  <div class="filter-group" style="margin-left:auto">
+    <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+    <a class="export-btn excel-btn" href="https://github.com/rossbarlow88/towing-research/raw/main/Operating_Exec_Mapping_Towing_Combined.xlsx" download>Download Excel</a>
   </div>
 </div>
 
@@ -405,6 +425,29 @@ function toggleDetail(idx) {
   const isOpen = el.classList.contains("open");
   document.querySelectorAll(".detail-row.open").forEach(e => e.classList.remove("open"));
   if (!isOpen) el.classList.add("open");
+}
+
+function exportCSV() {
+  const rows = getFiltered();
+  const headers = ["Name","Title","Company","Location","Function","Years of Experience","Relevance","Category","Source","LinkedIn","Email","Mobile","Education","Qualifications","Fit Rationale","Date Added","Tab"];
+  const csvRows = [headers.join(",")];
+  rows.forEach(r => {
+    const vals = [
+      r.name, r.title, r.company, r.location, r.function, r.yoe,
+      r.relevance, r.category, r.source_added||"", r.linkedin, r.email||"",
+      r.mobile||"", r.education||"", r.qualifications||"",
+      (r.fit_rationale||"").replace(/"/g,'""'), r.date_added||"", r.tab_label
+    ];
+    csvRows.push(vals.map(v => `"${(v||"").replace(/"/g,'""')}"`).join(","));
+  });
+  const blob = new Blob(["\uFEFF" + csvRows.join("\n")], {type:"text/csv;charset=utf-8;"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  const tabName = activeTab === "all" ? "all" : activeTab;
+  a.download = `towing_exec_mapping_${tabName}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 init();
